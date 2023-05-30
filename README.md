@@ -1,5 +1,7 @@
 # KubernetesReferences
 
+[![Gem Version](https://badge.fury.io/rb/kubernetes_references.svg)](https://badge.fury.io/rb/kubernetes_references)
+
 **Current API version: v1.23**
 
 This Ruby gem attempts to collect all the Kubernetes objects available in the API as Ruby objects. Although not very useful at the moment, it could come in handy if you want to develop tools that need to play with the api's schemas.
