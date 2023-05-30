@@ -63,7 +63,7 @@ No type error detected. 🧉
 
 ## How it works ?
 
-All classes in `lib/kubernetes_references` are inheriting from `KubernetesReferences::API``.
+All classes in `lib/kubernetes_references` are inheriting from `KubernetesReferences::API`.
 
 This class implements a `#_set!` method that takes a constructor hash (`#initialize`) in order to populate class attributes (if present).
 
