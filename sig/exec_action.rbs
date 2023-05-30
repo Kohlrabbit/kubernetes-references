@@ -1,0 +1,5 @@
+class KubernetesReferences::ExecAction < KubernetesReferences::API
+  attr_accessor command: Array[String]
+
+  def initialize: (untyped obj) -> void
+end

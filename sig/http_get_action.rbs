@@ -1,0 +1,9 @@
+class KubernetesReferences::HTTPGetAction < KubernetesReferences::API
+  attr_accessor host: String
+  attr_accessor http_headers: Array[::KubernetesReferences::HTTPHeader]
+  attr_accessor path: String
+  attr_accessor port: Integer
+  attr_accessor scheme: String
+
+  def initialize: (untyped obj) -> void
+end

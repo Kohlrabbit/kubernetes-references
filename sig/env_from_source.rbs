@@ -1,0 +1,7 @@
+class KubernetesReferences::EnvFromSource < KubernetesReferences::API
+  attr_accessor config_map_ref: ::KubernetesReferences::ConfigMapEnvSource
+  attr_accessor prefix: String
+  attr_accessor secret_ref: ::KubernetesReferences::SecretEnvSource
+
+  def initialize: (untyped obj) -> void
+end

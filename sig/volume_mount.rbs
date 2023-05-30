@@ -1,0 +1,10 @@
+class KubernetesReferences::VolumeMount < KubernetesReferences::API
+  attr_accessor mount_path: String
+  attr_accessor mount_propagation: String
+  attr_accessor name: String
+  attr_accessor read_only: bool
+  attr_accessor sub_path: String
+  attr_accessor sub_path_expr: String
+
+  def initialize: (untyped obj) -> void
+end

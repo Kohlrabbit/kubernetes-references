@@ -1,0 +1,6 @@
+class KubernetesReferences::ObjectFieldSelector < KubernetesReferences::API
+  attr_accessor api_version: String
+  attr_accessor field_path: String
+
+  def initialize: (untyped obj) -> void
+end

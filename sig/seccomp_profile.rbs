@@ -1,0 +1,6 @@
+class KubernetesReferences::SeccompProfile < KubernetesReferences::API
+  attr_accessor localhost_profile: String
+  attr_accessor type: String
+
+  def initialize: (untyped obj) -> void
+end

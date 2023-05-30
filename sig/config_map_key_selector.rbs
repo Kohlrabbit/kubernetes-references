@@ -1,0 +1,7 @@
+class KubernetesReferences::ConfigMapKeySelector < KubernetesReferences::API
+  attr_accessor key: String
+  attr_accessor name: String
+  attr_accessor optional: bool
+
+  def initialize: (untyped obj) -> void
+end

@@ -1,0 +1,15 @@
+class KubernetesReferences::SecurityContext < KubernetesReferences::API
+  attr_accessor allow_privilege_escalation: bool
+  attr_accessor capabilities: ::KubernetesReferences::Capabilities
+  attr_accessor privileged: bool
+  attr_accessor proc_mount: String
+  attr_accessor read_only_root_filesystem: bool
+  attr_accessor run_as_group: Integer
+  attr_accessor run_as_non_root: bool
+  attr_accessor run_as_user: Integer
+  attr_accessor selinux_options: ::KubernetesReferences::SELinuxOptions
+  attr_accessor seccomp_profile: ::KubernetesReferences::SeccompProfile
+  attr_accessor windows_options: ::KubernetesReferences::WindowsSecurityContextOptions
+
+  def initialize: (untyped obj) -> void
+end

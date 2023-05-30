@@ -1,0 +1,6 @@
+class KubernetesReferences::TCPSocketAction < KubernetesReferences::API
+  attr_accessor host: String
+  attr_accessor port: Integer
+
+  def initialize: (untyped obj) -> void
+end

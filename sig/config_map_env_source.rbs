@@ -1,0 +1,6 @@
+class KubernetesReferences::ConfigMapEnvSource < KubernetesReferences::API
+  attr_accessor name: String
+  attr_accessor optional: bool
+
+  def initialize: (untyped obj) -> void
+end

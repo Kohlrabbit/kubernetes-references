@@ -1,0 +1,6 @@
+module KubernetesReferences
+  class Error < StandardError
+  end
+  class InvalidObjectFieldError < Error
+  end
+end

@@ -1,0 +1,5 @@
+class KubernetesReferences::Quantity < KubernetesReferences::API
+  attr_accessor value: String
+
+  def initialize: (untyped obj) -> void
+end

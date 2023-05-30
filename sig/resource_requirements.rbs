@@ -1,0 +1,6 @@
+class KubernetesReferences::ResourceRequirements < KubernetesReferences::API
+  attr_accessor limits: untyped
+  attr_accessor requests: untyped
+
+  def initialize: (untyped obj) -> void
+end

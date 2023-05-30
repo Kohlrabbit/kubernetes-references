@@ -1,0 +1,7 @@
+class KubernetesReferences::LifecycleHandler < KubernetesReferences::API
+  attr_accessor exec: ::KubernetesReferences::ExecAction
+  attr_accessor http_get: ::KubernetesReferences::HTTPGetAction
+  attr_accessor tcp_socket: void
+
+  def initialize: (untyped obj) -> void
+end

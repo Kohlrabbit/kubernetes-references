@@ -1,0 +1,6 @@
+class KubernetesReferences::GRPCAction < KubernetesReferences::API
+  attr_accessor port: Integer
+  attr_accessor service: String
+
+  def initialize: (untyped obj) -> void
+end

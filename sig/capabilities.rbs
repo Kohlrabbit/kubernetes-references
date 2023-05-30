@@ -1,0 +1,6 @@
+class KubernetesReferences::Capabilities < KubernetesReferences::API
+  attr_accessor add: Array[String]
+  attr_accessor drop: Array[String]
+
+  def initialize: (untyped obj) -> void
+end

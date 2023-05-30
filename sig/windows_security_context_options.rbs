@@ -1,0 +1,8 @@
+class KubernetesReferences::WindowsSecurityContextOptions < KubernetesReferences::API
+  attr_accessor gmsa_credential_spec: String
+  attr_accessor gmsa_credential_spec_name: String
+  attr_accessor host_process: bool
+  attr_accessor run_as_user_name: String
+
+  def initialize: (untyped obj) -> void
+end

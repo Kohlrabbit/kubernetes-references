@@ -1,0 +1,9 @@
+class KubernetesReferences::ContainerPort < KubernetesReferences::API
+  attr_accessor container_port: Integer
+  attr_accessor host_ip: String
+  attr_accessor host_port: Integer
+  attr_accessor name: String
+  attr_accessor protocol: String
+
+  def initialize: (untyped obj) -> void
+end

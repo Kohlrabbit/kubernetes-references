@@ -1,0 +1,6 @@
+class KubernetesReferences::VolumeDevice < KubernetesReferences::API
+  attr_accessor device_path: String
+  attr_accessor name: String
+
+  def initialize: (untyped obj) -> void
+end

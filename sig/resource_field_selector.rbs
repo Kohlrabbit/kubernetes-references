@@ -1,0 +1,7 @@
+class KubernetesReferences::ResourceFieldSelector < KubernetesReferences::API
+  attr_accessor container_name: String
+  attr_accessor divisor: ::KubernetesReferences::Quantity
+  attr_accessor resource: String
+
+  def initialize: (untyped obj) -> void
+end
