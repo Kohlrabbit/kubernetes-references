@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class Deployment < KubernetesReferences::API
+    attr_accessor api_version: String
+    attr_accessor kind: String
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: DeploymentSpec
+    attr_accessor status: DeploymentStatus
+
+    def initialize: (untyped obj) -> void
+  end
+end

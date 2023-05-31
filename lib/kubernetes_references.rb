@@ -49,16 +49,16 @@ require "kubernetes_references/object_reference"
 require "kubernetes_references/owner_reference"
 require "kubernetes_references/persistent_volume_claim_spec"
 require "kubernetes_references/persistent_volume_claim_template"
-require "kubernetes_references/pod_affinity_term"
-require "kubernetes_references/pod_affinity"
-require "kubernetes_references/pod_anti_affinity"
-require "kubernetes_references/pod_dns_config_option"
-require "kubernetes_references/pod_dns_config"
-require "kubernetes_references/pod_os"
-require "kubernetes_references/pod_readiness_gate"
-require "kubernetes_references/pod_security_context"
-require "kubernetes_references/pod_spec"
-require "kubernetes_references/pod_template_spec"
+require "kubernetes_references/pod/pod_affinity_term"
+require "kubernetes_references/pod/pod_affinity"
+require "kubernetes_references/pod/pod_anti_affinity"
+require "kubernetes_references/pod/pod_dns_config_option"
+require "kubernetes_references/pod/pod_dns_config"
+require "kubernetes_references/pod/pod_os"
+require "kubernetes_references/pod/pod_readiness_gate"
+require "kubernetes_references/pod/pod_security_context"
+require "kubernetes_references/pod/pod_spec"
+require "kubernetes_references/pod/pod_template_spec"
 require "kubernetes_references/preferred_scheduling_term"
 require "kubernetes_references/probe"
 require "kubernetes_references/quantity"
@@ -116,6 +116,20 @@ require "kubernetes_references/daemon_set/daemon_set"
 require "kubernetes_references/daemon_set/rolling_update_daemon_set"
 require "kubernetes_references/daemon_set/daemon_set_status"
 require "kubernetes_references/daemon_set/daemon_set_condition"
+require "kubernetes_references/deployment/deployment"
+require "kubernetes_references/deployment/deployment_spec"
+require "kubernetes_references/deployment/deployment_strategy"
+require "kubernetes_references/deployment/rolling_update_deployment"
+require "kubernetes_references/deployment/deployment_status"
+require "kubernetes_references/deployment/deployment_condition"
+require "kubernetes_references/job/job"
+require "kubernetes_references/job/job_status"
+require "kubernetes_references/job/job_condition"
+require "kubernetes_references/job/uncounted_terminated_pods"
+require "kubernetes_references/pod/pod"
+require "kubernetes_references/pod/pod_status"
+require "kubernetes_references/pod/pod_condition"
+require "kubernetes_references/pod/pod_ip"
 
 module KubernetesReferences
   VERSION = 0.2
@@ -125,6 +139,20 @@ module KubernetesReferences
   # Your code goes here...
 end
 
+KubePodIP = KubernetesReferences::PodIP
+KubePodCondition = KubernetesReferences::PodCondition
+KubePodStatus = KubernetesReferences::PodStatus
+KubePod = KubernetesReferences::Pod
+KubeUncountedTerminatedPods = KubernetesReferences::UncountedTerminatedPods
+KubeJobCondition = KubernetesReferences::JobCondition
+KubeJobStatus = KubernetesReferences::JobStatus
+KubeJob = KubernetesReferences::Job
+KubeDeploymentCondition = KubernetesReferences::DeploymentCondition
+KubeDeploymentStatus = KubernetesReferences::DeploymentStatus
+KubeRollingUpdateDeployment = KubernetesReferences::RollingUpdateDeployment
+KubeDeploymentStrategy = KubernetesReferences::DeploymentStrategy
+KubeDeploymentSpec = KubernetesReferences::DeploymentSpec
+KubeDeployment = KubernetesReferences::Deployment
 KubeDaemonSetUpdateStrategy = KubernetesReferences::DaemonSetUpdateStrategy
 KubeDaemonSetSpec = KubernetesReferences::DaemonSetSpec
 KubeDaemonSet = KubernetesReferences::DaemonSet

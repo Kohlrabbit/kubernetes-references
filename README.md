@@ -125,9 +125,9 @@ The Kubernetes api is extremely large and evolves regularly. For the moment, the
 - [x] Container v1 core
 - [x] CronJob v1 batch
 - [x] DaemonSet v1 apps
-- [] Deployment v1 apps
-- [] Job v1 batch
-- [] Pod v1 core
+- [x] Deployment v1 apps
+- [x] Job v1 batch
+- [x] Pod v1 core
 - [] ReplicaSet v1 apps
 - [] ReplicationController v1 core
 - [] StatefulSet v1 apps

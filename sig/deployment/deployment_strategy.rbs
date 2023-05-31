@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class DeploymentStrategy < KubernetesReferences::API
+    attr_accessor rolling_update: RollingUpdateDeployment
+    attr_accessor type: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

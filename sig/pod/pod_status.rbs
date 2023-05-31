@@ -1,0 +1,19 @@
+module KubernetesReferences
+  class PodStatus < KubernetesReferences::API
+    attr_accessor pod_condition: Array[PodCondition]
+    attr_accessor container_statuses: Array[ContainerStatus]
+    attr_accessor ephemeral_container_statuses: Array[ContainerStatus]
+    attr_accessor host_ip: String
+    attr_accessor init_container_statuses: Array[ContainerStatus]
+    attr_accessor message: String
+    attr_accessor nominated_node_name: String
+    attr_accessor phase: String
+    attr_accessor pod_ip: String
+    attr_accessor pod_ips: Array[PodIP]
+    attr_accessor qos_class: String
+    attr_accessor reason: String
+    attr_accessor start_time: Time
+
+    def initialize: (untyped obj) -> void
+  end
+end

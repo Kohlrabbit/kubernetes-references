@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class UncountedTerminatedPods < KubernetesReferences::API
+    attr_accessor failed: Array[String]
+    attr_accessor succeeded: Array[String]
+
+    def initialize: (untyped obj) -> void
+  end
+end

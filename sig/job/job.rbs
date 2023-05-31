@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class Job < KubernetesReferences::API
+    attr_accessor api_version: String
+    attr_accessor kind: String
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: JobSpec
+    attr_accessor status: JobStatus
+
+    def initialize: (untyped obj) -> void
+  end
+end

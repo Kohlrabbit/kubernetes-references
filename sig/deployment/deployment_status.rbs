@@ -1,0 +1,14 @@
+module KubernetesReferences
+  class DeploymentStatus < KubernetesReferences::API
+    attr_accessor available_replicas: Integer
+    attr_accessor collision_count: Integer
+    attr_accessor conditions: Array[DeploymentCondition]
+    attr_accessor observed_generation: Integer
+    attr_accessor ready_replicas: Integer
+    attr_accessor replicas: Integer
+    attr_accessor unavailable_replicas: Integer
+    attr_accessor updated_replicas: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

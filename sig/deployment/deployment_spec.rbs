@@ -1,0 +1,14 @@
+module KubernetesReferences
+  class DeploymentSpec < KubernetesReferences::API
+    attr_accessor min_ready_seconds: Integer
+    attr_accessor paused: bool
+    attr_accessor progress_deadline_seconds: Integer
+    attr_accessor replicas: Integer
+    attr_accessor revision_history_limit: Integer
+    attr_accessor selector: LabelSelector
+    attr_accessor strategy: DeploymentStrategy
+    attr_accessor template: PodTemplateSpec
+
+    def initialize: (untyped obj) -> void
+  end
+end

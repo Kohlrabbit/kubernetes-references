@@ -1,0 +1,15 @@
+module KubernetesReferences
+  class JobStatus < KubernetesReferences::API
+    attr_accessor active: Integer
+    attr_accessor completed_indexes: String
+    attr_accessor completion_time: Time
+    attr_accessor conditions: Array[JobCondition]
+    attr_accessor failed: Integer
+    attr_accessor ready: Integer
+    attr_accessor start_time: Time
+    attr_accessor succeeded: Integer
+    attr_accessor uncounted_terminated_pods: UncountedTerminatedPods
+
+    def initialize: (untyped obj) -> void
+  end
+end

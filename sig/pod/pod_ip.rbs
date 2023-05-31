@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class PodIP < KubernetesReferences::API
+    attr_accessor ip: String
+
+    def initialize: (untyped obj) -> void
+  end
+end
