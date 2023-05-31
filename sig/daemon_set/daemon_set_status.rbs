@@ -1,0 +1,16 @@
+module KubernetesReferences
+  class DaemonSetStatus < KubernetesReferences::API
+    attr_accessor collision_count: Integer
+    attr_accessor conditions: Array[DaemonSetCondition]
+    attr_accessor current_number_scheduled: Integer
+    attr_accessor desired_number_scheduled: Integer
+    attr_accessor number_available: Integer
+    attr_accessor number_misscheduled: Integer
+    attr_accessor number_ready: Integer
+    attr_accessor number_unavailable: Integer
+    attr_accessor observed_generation: Integer
+    attr_accessor updated_number_scheduled: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

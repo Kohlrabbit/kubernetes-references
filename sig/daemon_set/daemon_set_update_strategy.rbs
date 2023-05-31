@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class DaemonSetUpdateStrategy < KubernetesReferences::API
+    attr_accessor rolling_update: RollingUpdateDaemonSet
+    attr_accessor type: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

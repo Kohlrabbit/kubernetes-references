@@ -28,5 +28,6 @@
 
 target :kuberbetes do
     signature "sig"
+    signature "sig/**/*.rbs"
     check "lib/**/*.rb"
 end

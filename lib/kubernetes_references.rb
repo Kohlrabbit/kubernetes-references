@@ -110,6 +110,12 @@ require "kubernetes_references/volume_source/vsphere_virtual_disk_volume_source"
 require "kubernetes_references/volume"
 require "kubernetes_references/weighted_pod_affinity_term"
 require "kubernetes_references/windows_security_context_options"
+require "kubernetes_references/daemon_set/daemon_set_spec"
+require "kubernetes_references/daemon_set/daemon_set_update_strategy"
+require "kubernetes_references/daemon_set/daemon_set"
+require "kubernetes_references/daemon_set/rolling_update_daemon_set"
+require "kubernetes_references/daemon_set/daemon_set_status"
+require "kubernetes_references/daemon_set/daemon_set_condition"
 
 module KubernetesReferences
   VERSION = 0.2
@@ -119,6 +125,9 @@ module KubernetesReferences
   # Your code goes here...
 end
 
+KubeDaemonSetUpdateStrategy = KubernetesReferences::DaemonSetUpdateStrategy
+KubeDaemonSetSpec = KubernetesReferences::DaemonSetSpec
+KubeDaemonSet = KubernetesReferences::DaemonSet
 KubeObjectReference = KubernetesReferences::ObjectReference
 KubeCronJobStatus = KubernetesReferences::CronJobStatus
 KubeVsphereVirtualDiskVolumeSource = KubernetesReferences::VsphereVirtualDiskVolumeSource

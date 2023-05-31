@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class RollingUpdateDaemonSet < KubernetesReferences::API
+    attr_accessor max_surge: Integer
+    attr_accessor max_unavailable: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

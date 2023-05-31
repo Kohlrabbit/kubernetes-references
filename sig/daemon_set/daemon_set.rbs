@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class DaemonSet < KubernetesReferences::API
+    attr_accessor api_version: String
+    attr_accessor kind: String
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: DaemonSetSpec
+    attr_accessor status: DaemonSetStatus
+
+    def initialize: (untyped obj) -> void
+  end
+end

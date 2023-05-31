@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class DaemonSetSpec < KubernetesReferences::API
+    attr_accessor min_ready_seconds: Integer
+    attr_accessor revision_history_limit: Integer
+    attr_accessor selector: LabelSelector
+    attr_accessor template: PodTemplateSpec
+    attr_accessor update_strategy: DaemonSetUpdateStrategy
+
+    def initialize: (untyped obj) -> void
+  end
+end
