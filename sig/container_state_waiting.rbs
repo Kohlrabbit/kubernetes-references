@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class ContainerStateWaiting < KubernetesReferences::API
+    attr_accessor message: String
+    attr_accessor reason: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

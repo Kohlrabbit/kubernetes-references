@@ -1,0 +1,15 @@
+module KubernetesReferences
+  class ContainerStatus < KubernetesReferences::API
+    attr_accessor container_id: String
+    attr_accessor image: String
+    attr_accessor image_id: String
+    attr_accessor last_state: ContainerState
+    attr_accessor name: String
+    attr_accessor ready: bool
+    attr_accessor restart_count: Integer
+    attr_accessor started: bool
+    attr_accessor state: ContainerState
+
+    def initialize: (untyped obj) -> void
+  end
+end

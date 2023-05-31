@@ -1,0 +1,13 @@
+module KubernetesReferences
+  class ContainerStateTerminated < KubernetesReferences::API
+    attr_accessor container_id: String
+    attr_accessor exit_code: Integer
+    attr_accessor finished_at: Time
+    attr_accessor message: String
+    attr_accessor reason: String
+    attr_accessor signal: Integer
+    attr_accessor started_at: Time
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class ContainerStateRunning < KubernetesReferences::API
+    attr_accessor started_at: Time
+
+    def initialize: (untyped obj) -> void
+  end
+end

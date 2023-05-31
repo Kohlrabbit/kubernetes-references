@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class ContainerState < KubernetesReferences::API
+    attr_accessor running: ContainerStateRunning
+    attr_accessor terminated: ContainerStateTerminated
+    attr_accessor waiting: ContainerStateWaiting
+
+    def initialize: (untyped obj) -> void
+  end
+end
