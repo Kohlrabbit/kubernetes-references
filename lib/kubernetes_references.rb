@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-require "kubernetes_references/errors"
 require "kubernetes_references/api"
 require "kubernetes_references/capabilities"
 require "kubernetes_references/config_map_env_source"
 require "kubernetes_references/config_map_key_selector"
-require "kubernetes_references/container_status"
 require "kubernetes_references/container_port"
 require "kubernetes_references/container_state_running"
 require "kubernetes_references/container_state_terminated"
 require "kubernetes_references/container_state_waiting"
 require "kubernetes_references/container_state"
+require "kubernetes_references/container_status"
 require "kubernetes_references/container"
 require "kubernetes_references/env_from_source"
 require "kubernetes_references/env_var_source"
 require "kubernetes_references/env_var"
+require "kubernetes_references/errors"
 require "kubernetes_references/exec_action"
 require "kubernetes_references/grpc_action"
 require "kubernetes_references/http_get_action"
@@ -36,6 +36,7 @@ require "kubernetes_references/volume_device"
 require "kubernetes_references/volume_mount"
 require "kubernetes_references/windows_security_context_options"
 
+
 module KubernetesReferences
   VERSION = 0.1
   KUBE_API_VERSION = "v1.23"
@@ -48,6 +49,11 @@ KubeCapabilities = KubernetesReferences::Capabilities
 KubeConfigMapEnvSource = KubernetesReferences::ConfigMapEnvSource
 KubeContainerPort = KubernetesReferences::ContainerPort
 KubeContainer = KubernetesReferences::Container
+KubeContainerState = KubernetesReferences::ContainerState
+KubeContainerStatus = KubernetesReferences::ContainerStatus
+KubeContainerStateRunning = KubernetesReferences::ContainerStateRunning
+KubeContainerStateTerminated = KubernetesReferences::ContainerStateTerminated
+KubeContainerStateWaiting = KubernetesReferences::ContainerStateWaiting
 KubeEnvFromSource = KubernetesReferences::EnvFromSource
 KubeEnvVarSource = KubernetesReferences::EnvVarSource
 KubeEnvVar = KubernetesReferences::EnvVar
