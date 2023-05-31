@@ -26,7 +26,7 @@ module KubernetesReferences
     attr_accessor projected: ProjectedVolumeSource
     attr_accessor quobyte: QuobyteVolumeSource
     attr_accessor rbd: RBDVolumeSource
-    attr_accessor scale_io: ScaleIOVolumeSource
+    attr_accessor scaleio: ScaleIOVolumeSource
     attr_accessor secret: SecretVolumeSource
     attr_accessor storageos: StorageOSVolumeSource
     attr_accessor vsphere_volume: VsphereVirtualDiskVolumeSource

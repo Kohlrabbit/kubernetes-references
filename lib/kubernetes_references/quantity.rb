@@ -1,5 +1,6 @@
 module KubernetesReferences
   class Quantity < KubernetesReferences::API
+    # @dynamic value, value=
     attr_accessor :value
 
     def initialize(obj)

@@ -1,5 +1,6 @@
 module KubernetesReferences
   class HTTPGetAction < KubernetesReferences::API
+    # @dynamic host, host=, http_headers, http_headers=, path, path=, port, port=, scheme, scheme=
     attr_accessor :host
     attr_accessor :http_headers
     attr_accessor :path

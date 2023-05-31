@@ -6,6 +6,20 @@
 
 This Ruby gem attempts to collect all the Kubernetes objects available in the API as Ruby objects. Although not very useful at the moment, it could come in handy if you want to develop tools that need to play with the api's schemas.
 
+## What is it
+
+* a dictionary of native Kubernetes objects
+* a precise definition of object types
+* a native library without external dependencies
+
+
+## What it is not
+
+* a wrapper around kubectl explain
+* a Kubernetes client
+* a tool officially managed by the Kubernetes team
+
+
 ## Naming and conventions
 
 The files in this gem are named in snake_case and the classes are in camelCase.
@@ -36,7 +50,7 @@ container = KubernetesReferences::Container.new(
 )
 ```
 
-Tired of writing "KubernetesReferences::" ? Shortcuts are present with the `Kube` prefix:
+Tired of writing "KubernetesReferences::" ? Classes are also callable with the `Kube` prefix:
 
 ```ruby
 require "kubernetes_references"

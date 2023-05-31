@@ -1,6 +1,8 @@
 module KubernetesReferences
   class HostPathVolumeSource < KubernetesReferences::API
+    # @dynamic path, path=
     attr_accessor :path
+    # @dynamic type, type=
     attr_accessor :type
 
     def initialize(obj)
