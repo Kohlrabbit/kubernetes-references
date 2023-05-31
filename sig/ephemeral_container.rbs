@@ -1,0 +1,29 @@
+module KubernetesReferences
+  class EphemeralContainer < KubernetesReferences::API
+    attr_accessor args: Array[String]
+    attr_accessor command: Array[String]
+    attr_accessor env: Array[EnvVar]
+    attr_accessor env_from: Array[EnvFromSource]
+    attr_accessor image: String
+    attr_accessor image_pull_policy: String
+    attr_accessor lifecycle: Lifecycle
+    attr_accessor liveness_probe: Probe
+    attr_accessor name: String
+    attr_accessor ports: Array[ContainerPort]
+    attr_accessor readiness_probe: Probe
+    attr_accessor resources: ResourceRequirements
+    attr_accessor security_context: SecurityContext
+    attr_accessor startup_probe: Probe
+    attr_accessor stdin: bool
+    attr_accessor stdin_once: bool
+    attr_accessor target_container_name: String
+    attr_accessor termination_message_path: String
+    attr_accessor termination_message_policy: String
+    attr_accessor tty: bool
+    attr_accessor volume_devices: Array[VolumeDevice]
+    attr_accessor volume_mounts: Array[VolumeMount]
+    attr_accessor working_dir: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

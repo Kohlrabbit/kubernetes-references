@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class NodeAffinity < KubernetesReferences::API
+    attr_accessor preferred_during_scheduling_ignored_during_execution: Array[PreferredSchedulingTerm]
+    attr_accessor required_during_scheduling_ignored_during_execution: NodeSelector
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class Toleration < KubernetesReferences::API
+    attr_accessor effect: String
+    attr_accessor key: String
+    attr_accessor operator: String
+    attr_accessor toleration_seconds: Integer
+    attr_accessor value: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

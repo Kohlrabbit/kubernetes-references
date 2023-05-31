@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class EphemeralVolumeSource < KubernetesReferences::API
+    attr_accessor volume_claim_template: PersistentVolumeClaimTemplate
+
+    def initialize: (untyped obj) -> void
+  end
+end

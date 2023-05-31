@@ -1,0 +1,17 @@
+module KubernetesReferences
+  class JobSpec < KubernetesReferences::API
+
+    attr_accessor active_deadline_seconds: Integer
+    attr_accessor backoff_limit: Integer
+    attr_accessor completion_mode: String
+    attr_accessor completions: Integer
+    attr_accessor manual_selector: bool
+    attr_accessor parallelism: bool
+    attr_accessor selector: LabelSelector
+    attr_accessor suspend: bool
+    attr_accessor template: PodTemplateSpec
+    attr_accessor ttl_seconds_after_finished: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

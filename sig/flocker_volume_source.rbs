@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class FlockerVolumeSource < KubernetesReferences::API
+    attr_accessor dataset_name: String
+    attr_accessor dataset_uuid: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class AzureFileVolumeSource < KubernetesReferences::API
+    attr_accessor read_only: bool
+    attr_accessor secret_name: String
+    attr_accessor share_name: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

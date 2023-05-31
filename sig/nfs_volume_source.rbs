@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class NFSVolumeSource < KubernetesReferences::API
+    attr_accessor path: String
+    attr_accessor read_only: bool
+    attr_accessor server: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

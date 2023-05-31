@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class EmptyDirVolumeSource < KubernetesReferences::API
+    attr_accessor medium: String
+    attr_accessor size_limit: Quantity
+
+    def initialize: (untyped obj) -> void
+  end
+end

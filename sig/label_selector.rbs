@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class LabelSelector < KubernetesReferences::API
+    attr_accessor match_expressions: Array[LabelSelectorRequirement]
+    attr_accessor match_labels: Hash[String, String]
+
+    def initialize: (untyped obj) -> void
+  end
+end

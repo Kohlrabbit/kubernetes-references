@@ -1,0 +1,13 @@
+module KubernetesReferences
+  class CronJobSpec < KubernetesReferences::API
+    attr_accessor concurrency_policy: String
+    attr_accessor failed_jobs_history_limit: Integer
+    attr_accessor job_template: JobTemplateSpec
+    attr_accessor schedule: String
+    attr_accessor starting_deadline_seconds: Integer
+    attr_accessor successful_jobs_history_limit: Integer
+    attr_accessor suspend: bool
+
+    def initialize: (untyped obj) -> void
+  end
+end

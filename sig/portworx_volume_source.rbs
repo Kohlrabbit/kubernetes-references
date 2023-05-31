@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class PortworxVolumeSource < KubernetesReferences::API
+    attr_accessor fs_type: String
+    attr_accessor read_only: bool
+    attr_accessor volume_id: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

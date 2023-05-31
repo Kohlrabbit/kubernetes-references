@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class DownwardAPIVolumeSource < KubernetesReferences::API
+    attr_accessor default_mode: Integer
+    attr_accessor items: Array[DownwardAPIVolumeFile]
+
+    def initialize: (untyped obj) -> void
+  end
+end

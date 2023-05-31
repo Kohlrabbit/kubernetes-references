@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class GlusterfsVolumeSource < KubernetesReferences::API
+    attr_accessor endpoints: String
+    attr_accessor path: String
+    attr_accessor read_only: bool
+
+    def initialize: (untyped obj) -> void
+  end
+end

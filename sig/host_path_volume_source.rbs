@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class HostPathVolumeSource < KubernetesReferences::API
+    attr_accessor path: String
+    attr_accessor type: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

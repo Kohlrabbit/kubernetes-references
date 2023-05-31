@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class WeightedPodAffinityTerm < KubernetesReferences::API
+    attr_accessor pod_affinity_term: PodAffinityTerm
+    attr_accessor weight: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

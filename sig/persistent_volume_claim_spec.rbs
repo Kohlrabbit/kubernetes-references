@@ -1,0 +1,14 @@
+module KubernetesReferences
+  class PersistentVolumeClaimSpec < KubernetesReferences::API
+    attr_accessor access_modes: Array[String]
+    attr_accessor data_source: TypedLocalObjectReference
+    attr_accessor data_source_ref: TypedLocalObjectReference
+    attr_accessor resources: ResourceRequirements
+    attr_accessor selector: LabelSelector
+    attr_accessor storage_class_name: String
+    attr_accessor volume_mode: String
+    attr_accessor volume_name: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

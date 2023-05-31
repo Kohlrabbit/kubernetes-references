@@ -1,0 +1,12 @@
+module KubernetesReferences
+  class CephFSVolumeSource < KubernetesReferences::API
+    attr_accessor monitors: Array[String]
+    attr_accessor path: String
+    attr_accessor read_only: bool
+    attr_accessor secret_file: String
+    attr_accessor secret_ref: LocalObjectReference
+    attr_accessor user: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

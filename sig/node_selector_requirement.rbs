@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class NodeSelectorRequirement < KubernetesReferences::API
+    attr_accessor key: String
+    attr_accessor operator: String
+    attr_accessor values: Array[String]
+
+    def initialize: (untyped obj) -> void
+  end
+end

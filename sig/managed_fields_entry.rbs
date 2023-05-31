@@ -1,0 +1,13 @@
+module KubernetesReferences
+  class ManagedFieldsEntry < KubernetesReferences::API
+    attr_accessor api_version: String
+    attr_accessor fields_type: String
+    attr_accessor fields_v1: FieldsV1
+    attr_accessor manager: String
+    attr_accessor operation: String
+    attr_accessor subresource: String
+    attr_accessor time: Time
+
+    def initialize: (untyped obj) -> void
+  end
+end

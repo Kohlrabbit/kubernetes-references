@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class TypedLocalObjectReference < KubernetesReferences::API
+    attr_accessor api_group: String
+    attr_accessor kind: String
+    attr_accessor name: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,11 @@
+module KubernetesReferences
+  class FCVolumeSource < KubernetesReferences::API
+    attr_accessor fs_type: String
+    attr_accessor lun: Integer
+    attr_accessor read_only: bool
+    attr_accessor target_wwns: Array[String]
+    attr_accessor wwids: Array[String]
+
+    def initialize: (untyped obj) -> void
+  end
+end

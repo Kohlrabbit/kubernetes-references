@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class KeyToPath < KubernetesReferences::API
+    attr_accessor key: String
+    attr_accessor mode: Integer
+    attr_accessor path: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,12 @@
+module KubernetesReferences
+  class AzureDiskVolumeSource < KubernetesReferences::API
+    attr_accessor caching_mode: String
+    attr_accessor disk_name: String
+    attr_accessor disk_uri: String
+    attr_accessor fs_type: String
+    attr_accessor kind: String
+    attr_accessor read_only: bool
+
+    def initialize: (untyped obj) -> void
+  end
+end

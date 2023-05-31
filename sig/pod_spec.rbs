@@ -1,0 +1,42 @@
+module KubernetesReferences
+  class PodSpec < KubernetesReferences::API
+    attr_accessor active_deadline_seconds: Integer
+    attr_accessor affinity: Affinity
+    attr_accessor automount_service_account_token: bool
+    attr_accessor containers: Array[Container]
+    attr_accessor dns_config: PodDNSConfig
+    attr_accessor dns_policy: String
+    attr_accessor enable_service_links: bool
+    attr_accessor ephemeral_containers: Array[EphemeralContainer]
+    attr_accessor host_aliases: Array[HostAlias]
+    attr_accessor host_ipc: bool
+    attr_accessor host_network: bool
+    attr_accessor host_pid: bool
+    attr_accessor hostname: String
+    attr_accessor image_pull_secrets: Array[LocalObjectReference]
+    attr_accessor init_containers: Array[Container]
+    attr_accessor node_name: String
+    attr_accessor node_selector: Hash[String, String]
+    attr_accessor os: PodOS
+    attr_accessor overhead: Hash[String, String]
+    attr_accessor preemption_policy: String
+    attr_accessor priority: Integer
+    attr_accessor priority_class_name: String
+    attr_accessor readiness_gates: Array[PodReadinessGate]
+    attr_accessor restart_policy: String
+    attr_accessor runtime_class_name: String
+    attr_accessor scheduler_name: String
+    attr_accessor security_context: PodSecurityContext
+    attr_accessor service_account: String
+    attr_accessor service_account_name: String
+    attr_accessor set_hostname_as_fqdn: bool
+    attr_accessor share_process_namespace: bool
+    attr_accessor subdomain: String
+    attr_accessor termination_grace_period_seconds: Integer
+    attr_accessor tolerations: Array[Toleration]
+    attr_accessor topology_spread_constraints: Array[TopologySpreadConstraint]
+    attr_accessor volumes: Array[Volume]
+
+    def initialize: (untyped obj) -> void
+  end
+end

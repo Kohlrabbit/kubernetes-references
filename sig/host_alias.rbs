@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class HostAlias < KubernetesReferences::API
+    attr_accessor hostnames: Array[String]
+    attr_accessor ip: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

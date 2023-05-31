@@ -1,0 +1,36 @@
+module KubernetesReferences
+  class Volume < KubernetesReferences::API
+    attr_accessor aws_elastic_block_store: AWSElasticBlockStoreVolumeSource
+    attr_accessor azure_disk: AzureDiskVolumeSource
+    attr_accessor azure_file: AzureFileVolumeSource
+    attr_accessor cephfs: CephFSVolumeSource
+    attr_accessor cinder: CinderVolumeSource
+    attr_accessor config_map: ConfigMapVolumeSource
+    attr_accessor csi: CSIVolumeSource
+    attr_accessor downward_api: DownwardAPIVolumeSource
+    attr_accessor empty_dir: EmptyDirVolumeSource
+    attr_accessor ephemeral: EphemeralVolumeSource
+    attr_accessor fc: FCVolumeSource
+    attr_accessor flex_volume: FlexVolumeSource
+    attr_accessor flocker: FlockerVolumeSource
+    attr_accessor gce_persistent_disk: GCEPersistentDiskVolumeSource
+    attr_accessor git_repo: GitRepoVolumeSource
+    attr_accessor glusterfs: GlusterfsVolumeSource
+    attr_accessor host_path: HostPathVolumeSource
+    attr_accessor iscsi: ISCSIVolumeSource
+    attr_accessor name: String
+    attr_accessor nfs: NFSVolumeSource
+    attr_accessor persistent_volume_claim: PersistentVolumeClaimVolumeSource
+    attr_accessor photon_persistent_disk: PhotonPersistentDiskVolumeSource
+    attr_accessor portworx_volume: PortworxVolumeSource
+    attr_accessor projected: ProjectedVolumeSource
+    attr_accessor quobyte: QuobyteVolumeSource
+    attr_accessor rbd: RBDVolumeSource
+    attr_accessor scale_io: ScaleIOVolumeSource
+    attr_accessor secret: SecretVolumeSource
+    attr_accessor storageos: StorageOSVolumeSource
+    attr_accessor vsphere_volume: VsphereVirtualDiskVolumeSource
+
+    def initialize: (untyped obj) -> void
+  end
+end

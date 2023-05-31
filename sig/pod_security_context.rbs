@@ -1,0 +1,16 @@
+module KubernetesReferences
+  class PodSecurityContext < KubernetesReferences::API
+    attr_accessor fs_group: Integer
+    attr_accessor fs_group_change_policy: String
+    attr_accessor run_as_group: Integer
+    attr_accessor run_as_non_root: bool
+    attr_accessor run_as_user: Integer
+    attr_accessor selinux_options: SELinuxOptions
+    attr_accessor seccomp_profile: SeccompProfile
+    attr_accessor supplemental_groups: Array[Integer]
+    attr_accessor sysctls: Array[Sysctl]
+    attr_accessor windows_options: WindowsSecurityContextOptions
+
+    def initialize: (untyped obj) -> void
+  end
+end

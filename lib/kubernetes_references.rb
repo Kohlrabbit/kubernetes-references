@@ -35,7 +35,81 @@ require "kubernetes_references/tcp_socket_action"
 require "kubernetes_references/volume_device"
 require "kubernetes_references/volume_mount"
 require "kubernetes_references/windows_security_context_options"
-
+require "kubernetes_references/cron_job"
+require "kubernetes_references/object_meta"
+require "kubernetes_references/managed_fields_entry"
+require "kubernetes_references/fields_v1"
+require "kubernetes_references/owner_reference"
+require "kubernetes_references/cron_job_spec"
+require "kubernetes_references/job_template_spec"
+require "kubernetes_references/job_spec"
+require "kubernetes_references/label_selector"
+require "kubernetes_references/label_selector_requirement"
+require "kubernetes_references/pod_template_spec"
+require "kubernetes_references/pod_spec"
+require "kubernetes_references/affinity"
+require "kubernetes_references/node_affinity"
+require "kubernetes_references/preferred_scheduling_term"
+require "kubernetes_references/node_selector_term"
+require "kubernetes_references/node_selector_requirement"
+require "kubernetes_references/node_selector"
+require "kubernetes_references/pod_affinity"
+require "kubernetes_references/weighted_pod_affinity_term"
+require "kubernetes_references/pod_affinity_term"
+require "kubernetes_references/pod_anti_affinity"
+require "kubernetes_references/pod_dns_config"
+require "kubernetes_references/pod_dns_config_option"
+require "kubernetes_references/ephemeral_container"
+require "kubernetes_references/host_alias"
+require "kubernetes_references/local_object_reference"
+require "kubernetes_references/pod_os"
+require "kubernetes_references/pod_readiness_gate"
+require "kubernetes_references/pod_security_context"
+require "kubernetes_references/sysctl"
+require "kubernetes_references/toleration"
+require "kubernetes_references/topology_spread_constraint"
+require "kubernetes_references/volume"
+require "kubernetes_references/aws_elastic_block_store_volume_source"
+require "kubernetes_references/azure_disk_volume_source"
+require "kubernetes_references/azure_file_volume_source"
+require "kubernetes_references/cephfs_volume_source"
+require "kubernetes_references/cinder_volume_source"
+require "kubernetes_references/config_map_volume_source"
+require "kubernetes_references/key_to_path"
+require "kubernetes_references/csi_volume_source"
+require "kubernetes_references/downward_api_volume_source"
+require "kubernetes_references/downward_api_volume_file"
+require "kubernetes_references/empty_dir_volume_source"
+require "kubernetes_references/ephemeral_volume_source"
+require "kubernetes_references/persistent_volume_claim_template"
+require "kubernetes_references/persistent_volume_claim_spec"
+require "kubernetes_references/typed_local_object_reference"
+require "kubernetes_references/fc_volume_source"
+require "kubernetes_references/flex_volume_source"
+require "kubernetes_references/flocker_volume_source"
+require "kubernetes_references/gce_persistent_disk_volume_source"
+require "kubernetes_references/git_repo_volume_source"
+require "kubernetes_references/glusterfs_volume_source"
+require "kubernetes_references/host_path_volume_source"
+require "kubernetes_references/iscsi_volume_source"
+require "kubernetes_references/nfs_volume_source"
+require "kubernetes_references/persistent_volume_claim_volume_source"
+require "kubernetes_references/photon_persistent_disk_volume_source"
+require "kubernetes_references/portworx_volume_source"
+require "kubernetes_references/projected_volume_source"
+require "kubernetes_references/volume_projection"
+require "kubernetes_references/config_map_projection"
+require "kubernetes_references/downward_api_projection"
+require "kubernetes_references/secret_projection"
+require "kubernetes_references/service_account_token_projection"
+require "kubernetes_references/quobyte_volume_source"
+require "kubernetes_references/rbd_volume_source"
+require "kubernetes_references/scaleio_volume_source"
+require "kubernetes_references/secret_volume_source"
+require "kubernetes_references/storageos_volume_source"
+require "kubernetes_references/vsphere_virtual_disk_volume_source"
+require "kubernetes_references/cron_job_status"
+require "kubernetes_references/object_reference"
 
 module KubernetesReferences
   VERSION = 0.1
@@ -45,6 +119,81 @@ module KubernetesReferences
   # Your code goes here...
 end
 
+KubeObjectReference = KubernetesReferences::ObjectReference
+KubeCronJobStatus = KubernetesReferences::CronJobStatus
+KubeVsphereVirtualDiskVolumeSource = KubernetesReferences::VsphereVirtualDiskVolumeSource
+KubeStorageOSVolumeSource = KubernetesReferences::StorageOSVolumeSource
+KubeSecretVolumeSource = KubernetesReferences::SecretVolumeSource
+KubeScaleIOVolumeSource = KubernetesReferences::ScaleIOVolumeSource
+KubeRBDVolumeSource = KubernetesReferences::RBDVolumeSource
+KubeQuobyteVolumeSource = KubernetesReferences::QuobyteVolumeSource
+KubeServiceAccountTokenProjection = KubernetesReferences::ServiceAccountTokenProjection
+KubeSecretProjection = KubernetesReferences::SecretProjection
+KubeDownwardAPIProjection = KubernetesReferences::DownwardAPIProjection
+KubeConfigMapProjection = KubernetesReferences::ConfigMapProjection
+KubeVolumeProjection = KubernetesReferences::VolumeProjection
+KubeProjectedVolumeSource = KubernetesReferences::ProjectedVolumeSource
+KubePortworxVolumeSource = KubernetesReferences::PortworxVolumeSource
+KubePhotonPersistentDiskVolumeSource = KubernetesReferences::PhotonPersistentDiskVolumeSource
+KubePersistentVolumeClaimVolumeSource = KubernetesReferences::PersistentVolumeClaimVolumeSource
+KubeNFSVolumeSource = KubernetesReferences::NFSVolumeSource
+KubeISCSIVolumeSource = KubernetesReferences::ISCSIVolumeSource
+KubeHostPathVolumeSource = KubernetesReferences::HostPathVolumeSource
+KubeGlusterfsVolumeSource = KubernetesReferences::GlusterfsVolumeSource
+KubeGitRepoVolumeSource = KubernetesReferences::GitRepoVolumeSource
+KubeGCEPersistentDiskVolumeSource = KubernetesReferences::GCEPersistentDiskVolumeSource
+KubeFlockerVolumeSource = KubernetesReferences::FlockerVolumeSource
+KubeFlexVolumeSource = KubernetesReferences::FlexVolumeSource
+KubeFCVolumeSource = KubernetesReferences::FCVolumeSource
+KubeTypedLocalObjectReference = KubernetesReferences::TypedLocalObjectReference
+KubePersistentVolumeClaimSpec = KubernetesReferences::PersistentVolumeClaimSpec
+KubePersistentVolumeClaimTemplate = KubernetesReferences::PersistentVolumeClaimTemplate
+KubeEphemeralVolumeSource = KubernetesReferences::EphemeralVolumeSource
+KubeEmptyDirVolumeSource = KubernetesReferences::EmptyDirVolumeSource
+KubeDownwardAPIVolumeFile = KubernetesReferences::DownwardAPIVolumeFile
+KubeDownwardAPIVolumeSource = KubernetesReferences::DownwardAPIVolumeSource
+KubeCSIVolumeSource = KubernetesReferences::CSIVolumeSource
+KubeKeyToPath = KubernetesReferences::KeyToPath
+KubeConfigMapVolumeSource = KubernetesReferences::ConfigMapVolumeSource
+KubeCinderVolumeSource = KubernetesReferences::CinderVolumeSource
+KubeCephFSVolumeSource = KubernetesReferences::CephFSVolumeSource
+KubeAzureFileVolumeSource = KubernetesReferences::AzureFileVolumeSource
+KubeAzureDiskVolumeSource = KubernetesReferences::AzureDiskVolumeSource
+KubeAWSElasticBlockStoreVolumeSource = KubernetesReferences::AWSElasticBlockStoreVolumeSource
+KubeVolume = KubernetesReferences::Volume
+KubeTopologySpreadConstraint = KubernetesReferences::TopologySpreadConstraint
+KubeToleration = KubernetesReferences::Toleration
+KubeSysctl = KubernetesReferences::Sysctl
+KubePodSecurityContext = KubernetesReferences::PodSecurityContext
+KubePodReadinessGate = KubernetesReferences::PodReadinessGate
+KubePodOS = KubernetesReferences::PodOS
+KubeLocalObjectReference = KubernetesReferences::LocalObjectReference
+KubeHostAlias = KubernetesReferences::HostAlias
+KubeEphemeralContainer = KubernetesReferences::EphemeralContainer
+KubePodDNSConfigOption = KubernetesReferences::PodDNSConfigOption
+KubePodDNSConfig = KubernetesReferences::PodDNSConfig
+KubePodAntiAffinity = KubernetesReferences::PodAntiAffinity
+KubePodAffinityTerm = KubernetesReferences::PodAffinityTerm
+KubeWeightedPodAffinityTerm = KubernetesReferences::WeightedPodAffinityTerm
+KubePodAffinity = KubernetesReferences::PodAffinity
+KubeNodeSelector = KubernetesReferences::NodeSelector
+KubeNodeSelectorRequirement = KubernetesReferences::NodeSelectorRequirement
+KubeNodeSelectorTerm = KubernetesReferences::NodeSelectorTerm
+KubePreferredSchedulingTerm = KubernetesReferences::PreferredSchedulingTerm
+KubeNodeAffinity = KubernetesReferences::NodeAffinity
+KubeAffinity = KubernetesReferences::Affinity
+KubePodSpec = KubernetesReferences::PodSpec
+KubePodTemplateSpec = KubernetesReferences::PodTemplateSpec
+KubeLabelSelectorRequirement = KubernetesReferences::LabelSelectorRequirement
+KubeLabelSelector = KubernetesReferences::LabelSelector
+KubeJobSpec = KubernetesReferences::JobSpec
+KubeJobTemplateSpec = KubernetesReferences::JobTemplateSpec
+KubeCronJobSpec = KubernetesReferences::CronJobSpec
+KubeOwnerReference = KubernetesReferences::OwnerReference
+KubeFieldsV1 = KubernetesReferences::FieldsV1
+KubeManagedFieldsEntry = KubernetesReferences::ManagedFieldsEntry
+KubeObjectMeta = KubernetesReferences::ObjectMeta
+KubeCronJob = KubernetesReferences::CronJob
 KubeCapabilities = KubernetesReferences::Capabilities
 KubeConfigMapEnvSource = KubernetesReferences::ConfigMapEnvSource
 KubeContainerPort = KubernetesReferences::ContainerPort

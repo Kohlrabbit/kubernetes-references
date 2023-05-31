@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class PodTemplateSpec < KubernetesReferences::API
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: PodSpec
+
+    def initialize: (untyped obj) -> void
+  end
+end

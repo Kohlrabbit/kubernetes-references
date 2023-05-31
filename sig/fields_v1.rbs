@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class FieldsV1 < KubernetesReferences::API
+    attr_accessor value: untyped # Trie value: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#fieldsv1-v1-meta
+
+    def initialize: (untyped obj) -> void
+  end
+end

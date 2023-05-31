@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class JobTemplateSpec < KubernetesReferences::API
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: JobSpec
+
+    def initialize: (untyped obj) -> void
+  end
+end

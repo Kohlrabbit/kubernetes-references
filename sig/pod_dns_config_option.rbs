@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class PodDNSConfigOption < KubernetesReferences::API
+    attr_accessor name: String
+    attr_accessor value: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

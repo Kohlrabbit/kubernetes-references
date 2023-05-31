@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class CronJobStatus < KubernetesReferences::API
+    attr_accessor active: Array[ObjectReference]
+    attr_accessor last_schedule_time: Time
+    attr_accessor last_successful_time: Time
+
+    def initialize: (untyped obj) -> void
+  end
+end

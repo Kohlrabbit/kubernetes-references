@@ -1,0 +1,10 @@
+module KubernetesReferences
+  class TopologySpreadConstraint < KubernetesReferences::API
+    attr_accessor label_selector: LabelSelector
+    attr_accessor max_skew: Integer
+    attr_accessor topology_key: String
+    attr_accessor when_unsatisfiable: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

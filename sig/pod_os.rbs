@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class PodOS < KubernetesReferences::API
+    attr_accessor name: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

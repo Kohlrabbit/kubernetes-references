@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class PhotonPersistentDiskVolumeSource < KubernetesReferences::API
+    attr_accessor fs_type: String
+    attr_accessor pd_id: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,13 @@
+module KubernetesReferences
+  class OwnerReference < KubernetesReferences::API
+
+    attr_accessor api_version: String
+    attr_accessor block_owner_deletion: bool
+    attr_accessor controller: bool
+    attr_accessor kind: String
+    attr_accessor name: String
+    attr_accessor uid: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

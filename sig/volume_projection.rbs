@@ -1,0 +1,10 @@
+module KubernetesReferences
+  class VolumeProjection < KubernetesReferences::API
+    attr_accessor config_map: ConfigMapProjection
+    attr_accessor downward_api: DownwardAPIProjection
+    attr_accessor secret: SecretProjection
+    attr_accessor service_account_token: ServiceAccountTokenProjection
+
+    def initialize: (untyped obj) -> void
+  end
+end

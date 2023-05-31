@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class PodDNSConfig < KubernetesReferences::API
+    attr_accessor nameservers: Array[String]
+    attr_accessor options: Array[PodDNSConfigOption]
+    attr_accessor searches: Array[String]
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class GitRepoVolumeSource < KubernetesReferences::API
+    attr_accessor directory: String
+    attr_accessor repository: String
+    attr_accessor revision: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class PodReadinessGate < KubernetesReferences::API
+    attr_accessor condition_type: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class NodeSelectorTerm < KubernetesReferences::API
+    attr_accessor match_expressions: Array[NodeSelectorRequirement]
+    attr_accessor match_fields: Array[NodeSelectorRequirement]
+
+    def initialize: (untyped obj) -> void
+  end
+end

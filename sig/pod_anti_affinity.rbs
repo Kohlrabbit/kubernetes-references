@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class PodAntiAffinity < KubernetesReferences::API
+    attr_accessor preferred_during_scheduling_ignored_during_execution: Array[WeightedPodAffinityTerm]
+    attr_accessor required_during_scheduling_ignored_during_execution: Array[PodAffinityTerm]
+
+    def initialize: (untyped obj) -> void
+  end
+end

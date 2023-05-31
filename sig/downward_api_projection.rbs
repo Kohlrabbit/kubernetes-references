@@ -1,0 +1,7 @@
+module KubernetesReferences
+  class DownwardAPIProjection < KubernetesReferences::API
+    attr_accessor items: Array[DownwardAPIVolumeFile]
+
+    def initialize: (untyped obj) -> void
+  end
+end

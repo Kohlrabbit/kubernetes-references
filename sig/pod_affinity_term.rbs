@@ -1,0 +1,10 @@
+module KubernetesReferences
+  class PodAffinityTerm < KubernetesReferences::API
+    attr_accessor label_selector: LabelSelector
+    attr_accessor namespace_selector: LabelSelector
+    attr_accessor namespaces: Array[String]
+    attr_accessor topology_key: String
+
+    def initialize: (untyped obj) -> void
+  end
+end

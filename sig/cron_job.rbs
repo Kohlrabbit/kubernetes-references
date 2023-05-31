@@ -1,0 +1,12 @@
+module KubernetesReferences
+  class CronJob < KubernetesReferences::API
+
+    attr_accessor api_version: String
+    attr_accessor kind: String
+    attr_accessor metadata: ObjectMeta
+    attr_accessor spec: CronJobSpec
+    attr_accessor status: CronJobStatus
+
+    def initialize: (untyped obj) -> void
+  end
+end

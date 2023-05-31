@@ -1,0 +1,9 @@
+module KubernetesReferences
+  class Affinity < KubernetesReferences::API
+    attr_accessor node_affinity: NodeAffinity
+    attr_accessor pod_affinity: PodAffinity
+    attr_accessor pod_anti_affinity: PodAntiAffinity
+
+    def initialize: (untyped obj) -> void
+  end
+end

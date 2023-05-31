@@ -1,0 +1,8 @@
+module KubernetesReferences
+  class PreferredSchedulingTerm < KubernetesReferences::API
+    attr_accessor preference: NodeSelectorTerm
+    attr_accessor weight: Integer
+
+    def initialize: (untyped obj) -> void
+  end
+end

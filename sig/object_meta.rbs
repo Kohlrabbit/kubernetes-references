@@ -1,0 +1,22 @@
+module KubernetesReferences
+  class ObjectMeta < KubernetesReferences::API
+    attr_accessor annotations: Hash[String, String]
+    attr_accessor cluster_name: String
+    attr_accessor creation_timestamp: Time
+    attr_accessor deletion_grace_period_seconds: Integer
+    attr_accessor deletion_timestamp: Time
+    attr_accessor finalizers: Array[String]
+    attr_accessor generate_name: String
+    attr_accessor generation: Integer
+    attr_accessor labels: Hash[String, String]
+    attr_accessor managed_fields: Array[ManagedFieldsEntry]
+    attr_accessor name: String
+    attr_accessor namespace: String
+    attr_accessor owner_references: Array[OwnerReference]
+    attr_accessor resource_version: String
+    attr_accessor self_link: String
+    attr_accessor uid: String
+
+    def initialize: (untyped obj) -> void
+  end
+end
