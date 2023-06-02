@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#pod-v1-core
   class Pod < KubernetesReferences::API
-    # @dynamic api_version, api_version= 
+    # @dynamic api_version, api_version=
     attr_accessor :api_version
     # @dynamic kind, kind=
     attr_accessor :kind
@@ -12,6 +15,7 @@ module KubernetesReferences
     attr_accessor :status
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

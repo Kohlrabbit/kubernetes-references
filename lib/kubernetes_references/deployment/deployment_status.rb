@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#deploymentstatus-v1-apps
   class DeploymentStatus < KubernetesReferences::API
     # @dynamic available_replicas, available_replicas=
     attr_accessor :available_replicas
@@ -18,6 +21,7 @@ module KubernetesReferences
     attr_accessor :updated_replicas
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -25,7 +29,7 @@ module KubernetesReferences
       {
         availableReplicas: @available_replicas,
         collisionCount: @collision_count,
-        conditions: @conditions.map{|r| r.schema},
+        conditions: @conditions.map(&:schema),
         observedGeneration: @observed_generation,
         readyReplicas: @ready_replicas,
         replicas: @replicas,

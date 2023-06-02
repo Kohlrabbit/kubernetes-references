@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#securitycontext-v1-core
   class SecurityContext < KubernetesReferences::API
     # @dynamic allow_privilege_escalation, allow_privilege_escalation=
     attr_accessor :allow_privilege_escalation
@@ -24,6 +27,7 @@ module KubernetesReferences
     attr_accessor :windows_options
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

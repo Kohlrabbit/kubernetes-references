@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#deploymentstrategy-v1-apps
   class DeploymentStrategy < KubernetesReferences::API
     # @dynamic rolling_update, rolling_update=
     attr_accessor :rolling_update
@@ -6,6 +9,7 @@ module KubernetesReferences
     attr_accessor :type
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podsecuritycontext-v1-core
   class PodSecurityContext < KubernetesReferences::API
     # @dynamic fs_group, fs_group=
     attr_accessor :fs_group
@@ -22,6 +25,7 @@ module KubernetesReferences
     attr_accessor :windows_options
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -34,7 +38,7 @@ module KubernetesReferences
         seLinuxOptions: @selinux_options.schema,
         seccompProfile: @seccomp_profile.schema,
         supplementalGroups: @supplemental_groups,
-        sysctls: @sysctls.map{|r| r.schema},
+        sysctls: @sysctls.map(&:schema),
         windowsOptions: @windows_options.schema
       }
     end

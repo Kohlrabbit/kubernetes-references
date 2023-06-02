@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podspec-v1-core
   class PodSpec < KubernetesReferences::API
     # @dynamic active_deadline_seconds, active_deadline_seconds=
     attr_accessor :active_deadline_seconds
@@ -74,6 +77,7 @@ module KubernetesReferences
     attr_accessor :volumes
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -82,18 +86,18 @@ module KubernetesReferences
         activeDeadlineSeconds: @active_deadline_seconds,
         affinity: @affinity.schema,
         automountServiceAccountToken: @automount_service_account_token,
-        containers: @containers.map{|r| r.schema},
+        containers: @containers.map(&:schema),
         dnsConfig: @dns_config.schema,
         dnsPolicy: @dns_policy,
         enableServiceLinks: @enable_service_links,
-        ephemeralContainers: @ephemeral_containers.map{|r| r.schema},
-        hostAliases: @host_aliases.map{|r| r.schema},
+        ephemeralContainers: @ephemeral_containers.map(&:schema),
+        hostAliases: @host_aliases.map(&:schema),
         hostIPC: @host_ipc,
         hostNetwork: @host_network,
         hostPID: @host_pid,
         hostname: @hostname,
         imagePullSecrets: @image_pull_secrets,
-        initContainers: @init_containers.map{|r| r.schema},
+        initContainers: @init_containers.map(&:schema),
         nodeName: @node_name,
         nodeSelector: @node_selector,
         os: @os.schema,
@@ -101,7 +105,7 @@ module KubernetesReferences
         preemptionPolicy: @preemption_policy,
         priority: @priority,
         priorityClassName: @priority_class_name,
-        readinessGates: @readiness_gates.map{|r| r.schema},
+        readinessGates: @readiness_gates.map(&:schema),
         restartPolicy: @restart_policy,
         runtimeClassName: @runtime_class_name,
         schedulerName: @scheduler_name,
@@ -112,9 +116,9 @@ module KubernetesReferences
         shareProcessNamespace: @share_process_namespace,
         subdmain: @subdomain,
         terminationGracePeriodSeconds: @termination_grace_period_seconds,
-        tolerations: @tolerations.map{|r| r.schema},
-        topologySpreadConstraints: @topology_spread_constraints.map{|r| r.schema},
-        volumes: @volumes.map{|r| r.schema}
+        tolerations: @tolerations.map(&:schema),
+        topologySpreadConstraints: @topology_spread_constraints.map(&:schema),
+        volumes: @volumes.map(&:schema)
       }
     end
   end

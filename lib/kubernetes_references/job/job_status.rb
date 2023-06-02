@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#jobstatus-v1-batch
   class JobStatus < KubernetesReferences::API
     # @dynamic active, active=
     attr_accessor :active
@@ -20,6 +23,7 @@ module KubernetesReferences
     attr_accessor :uncounted_terminated_pods
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -28,7 +32,7 @@ module KubernetesReferences
         active: @active,
         completedIndexes: @completed_indexes,
         completionTime: @completion_time,
-        conditions: @conditions.map{|r| r.schema},
+        conditions: @conditions.map(&:schema),
         failed: @failed,
         ready: @ready,
         startTime: @start_time,

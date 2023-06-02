@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta
   class ObjectMeta < KubernetesReferences::API
     # @dynamic annotations, annotations=
     attr_accessor :annotations
@@ -34,6 +37,7 @@ module KubernetesReferences
     attr_accessor :uid
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -48,10 +52,10 @@ module KubernetesReferences
         generateName: @generate_name,
         generation: @generation,
         labels: @labels,
-        managedFields: @managed_fields.map{|r| r.schema},
+        managedFields: @managed_fields.map(&:schema),
         name: @name,
         namespace: @namespace,
-        ownerReferences: @owner_references.map{|r| r.schema},
+        ownerReferences: @owner_references.map(&:schema),
         resourceVersion: @resource_version,
         selfLink: @self_link,
         uid: @uid

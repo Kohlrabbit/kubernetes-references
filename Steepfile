@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # D = Steep::Diagnostic
 #
 # target :lib do
@@ -27,8 +29,8 @@
 # end
 
 target :kuberbetes do
-    signature "sig"
-    signature "sig/**/*.rbs"
-    library "yaml"
-    check "lib/**/*.rb"
+  signature 'sig'
+  signature 'sig/**/*.rbs'
+  library 'yaml'
+  check 'lib/**/*.rb'
 end

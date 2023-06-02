@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#daemonsetstatus-v1-apps
   class DaemonSetStatus < KubernetesReferences::API
     # @dynamic collision_count, collision_count=
     attr_accessor :collision_count
@@ -22,13 +25,14 @@ module KubernetesReferences
     attr_accessor :updated_number_scheduled
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
     def _schema
       {
         colisionCount: @collision_count,
-        conditions: @conditions.map{|r| r.schema},
+        conditions: @conditions.map(&:schema),
         currentNumberScheduled: @current_number_scheduled,
         desiredNumberScheduled: @desired_number_scheduled,
         numberAvailable: @number_available,

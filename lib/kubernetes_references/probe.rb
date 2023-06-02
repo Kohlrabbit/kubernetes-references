@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#probe-v1-core
   class Probe < KubernetesReferences::API
     # @dynamic exec, exec=
     attr_accessor :exec
@@ -22,6 +25,7 @@ module KubernetesReferences
     attr_accessor :timeout_seconds
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

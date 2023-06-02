@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#volumeprojection-v1-core
   class VolumeProjection < KubernetesReferences::API
     # @dynamic config_map, config_map=
     attr_accessor :config_map
@@ -10,6 +13,7 @@ module KubernetesReferences
     attr_accessor :service_account_token
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

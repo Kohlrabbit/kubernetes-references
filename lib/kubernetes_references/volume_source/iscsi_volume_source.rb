@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#iscsivolumesource-v1-core
   class ISCSIVolumeSource < KubernetesReferences::API
     # @dynamic chap_auth_discovery, chap_auth_discovery=
     attr_accessor :chap_auth_discovery
@@ -24,6 +27,7 @@ module KubernetesReferences
     attr_accessor :target_portal
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

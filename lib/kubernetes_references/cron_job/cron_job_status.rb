@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#cronjobstatus-v1-batch
   class CronJobStatus < KubernetesReferences::API
     # @dynamic active, active=
     attr_accessor :active
@@ -8,6 +11,7 @@ module KubernetesReferences
     attr_accessor :last_successful_time
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

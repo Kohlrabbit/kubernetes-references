@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#containerport-v1-core
   class ContainerPort < KubernetesReferences::API
     # @dynamic container_port, container_port=
     attr_accessor :container_port
@@ -12,6 +15,7 @@ module KubernetesReferences
     attr_accessor :protocol
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

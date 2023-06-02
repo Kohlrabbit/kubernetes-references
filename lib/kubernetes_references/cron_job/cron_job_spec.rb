@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#cronjobspec-v1-batch
   class CronJobSpec < KubernetesReferences::API
     # @dynamic concurrency_policy, concurrency_policy=
     attr_accessor :concurrency_policy
@@ -16,6 +19,7 @@ module KubernetesReferences
     attr_accessor :suspend
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

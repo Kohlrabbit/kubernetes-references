@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#deploymentcondition-v1-apps
   class DeploymentCondition < KubernetesReferences::API
     # @dynamic last_transition_time, last_transition_time=
     attr_accessor :last_transition_time
@@ -14,6 +17,7 @@ module KubernetesReferences
     attr_accessor :type
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

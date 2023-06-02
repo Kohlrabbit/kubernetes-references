@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#storageosvolumesource-v1-core
   class StorageOSVolumeSource < KubernetesReferences::API
     # @dynamic fs_type, fs_type=
     attr_accessor :fs_type
@@ -12,6 +15,7 @@ module KubernetesReferences
     attr_accessor :volume_namespace
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

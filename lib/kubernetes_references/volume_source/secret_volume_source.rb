@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#secretvolumesource-v1-core
   class SecretVolumeSource < KubernetesReferences::API
     # @dynamic default_mode, default_mode=
     attr_accessor :default_mode
@@ -10,13 +13,14 @@ module KubernetesReferences
     attr_accessor :secret_name
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
     def _schema
       {
         defaultMode: @default_mode,
-        items: @items.map{|r| r.schema},
+        items: @items.map(&:schema),
         optional: @optional,
         secretName: @secret_name
       }

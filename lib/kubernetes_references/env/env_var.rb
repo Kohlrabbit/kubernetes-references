@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#envvar-v1-core
   class EnvVar < KubernetesReferences::API
     # @dynamic name, name=
     attr_accessor :name
@@ -8,6 +11,7 @@ module KubernetesReferences
     attr_accessor :value_from
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

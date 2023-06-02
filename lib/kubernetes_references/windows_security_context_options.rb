@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#windowssecuritycontextoptions-v1-core
   class WindowsSecurityContextOptions < KubernetesReferences::API
     # @dynamic gmsa_credential_spec, gmsa_credential_spec=
     attr_accessor :gmsa_credential_spec
@@ -10,6 +13,7 @@ module KubernetesReferences
     attr_accessor :run_as_user_name
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

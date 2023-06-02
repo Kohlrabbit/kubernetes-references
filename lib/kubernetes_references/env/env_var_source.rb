@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#envvarsource-v1-core
   class EnvVarSource < KubernetesReferences::API
     # @dynamic config_map_key_ref, config_map_key_ref=
     attr_accessor :config_map_key_ref
@@ -10,6 +13,7 @@ module KubernetesReferences
     attr_accessor :secret_key_ref
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

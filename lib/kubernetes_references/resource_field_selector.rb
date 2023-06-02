@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#resourcefieldselector-v1-core
   class ResourceFieldSelector < KubernetesReferences::API
     # @dynamic container_name, container_name=
     attr_accessor :container_name
@@ -8,6 +11,7 @@ module KubernetesReferences
     attr_accessor :resource
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#secretenvsource-v1-core
   class SecretEnvSource < KubernetesReferences::API
     # @dynamic name, name=
     attr_accessor :name
@@ -6,6 +9,7 @@ module KubernetesReferences
     attr_accessor :optional
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

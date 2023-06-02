@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#ephemeralcontainer-v1-core
   class EphemeralContainer < KubernetesReferences::API
     # @dynamic args, args=
     attr_accessor :args
@@ -48,6 +51,7 @@ module KubernetesReferences
     attr_accessor :working_dir
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -55,14 +59,14 @@ module KubernetesReferences
       {
         args: @args,
         command: @command,
-        env: @env.map{|r| r.schema},
-        envFrom: @env_from.map{|r| r.schema},
+        env: @env.map(&:schema),
+        envFrom: @env_from.map(&:schema),
         image: @image,
         imagePullPolicy: @image_pull_policy,
         lifecycle: @lifecycle,
         livenessProbe: @liveness_probe.schema,
         name: @name,
-        ports: @ports.map{|r| r.schema},
+        ports: @ports.map(&:schema),
         readinessProbe: @readiness_probe.schema,
         resources: @resources.schema,
         securityContext: @security_context.schema,
@@ -73,8 +77,8 @@ module KubernetesReferences
         terminationMessagePath: @termination_message_path,
         terminationMessagePolicy: @termination_message_policy,
         tty: @tty,
-        volumeDevices: @volume_devices.map{|r| r.schema},
-        volumeMounts: @volume_mounts.map{|r| r.schema},
+        volumeDevices: @volume_devices.map(&:schema),
+        volumeMounts: @volume_mounts.map(&:schema),
         workingDir: @working_dir
       }
     end

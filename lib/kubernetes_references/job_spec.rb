@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#jobspec-v1-batch
   class JobSpec < KubernetesReferences::API
     # @dynamic active_deadline_seconds, active_deadline_seconds=
     attr_accessor :active_deadline_seconds
@@ -22,6 +25,7 @@ module KubernetesReferences
     attr_accessor :ttl_seconds_after_finished
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

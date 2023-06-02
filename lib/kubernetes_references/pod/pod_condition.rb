@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podcondition-v1-core
   class PodCondition < KubernetesReferences::API
     # @dynamic last_probe_time, last_probe_time=
     attr_accessor :last_probe_time
@@ -14,6 +17,7 @@ module KubernetesReferences
     attr_accessor :type
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#deploymentspec-v1-apps
   class DeploymentSpec < KubernetesReferences::API
     # @dynamic min_ready_seconds, min_ready_seconds=
     attr_accessor :min_ready_seconds
@@ -18,6 +21,7 @@ module KubernetesReferences
     attr_accessor :template
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podstatus-v1-core
   class PodStatus < KubernetesReferences::API
     # @dynamic pod_condition, pod_condition=
     attr_accessor :pod_condition
@@ -28,24 +31,25 @@ module KubernetesReferences
     attr_accessor :start_time
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
     def _schema
       {
-        podCondition: @pod_condition.map{|r| r.schema},
-        containerStatuses: @container_statuses.map{|r| r.schema},
-        ephemeralContainerStatuses: @ephemeral_container_statuses.map{|r| r.schema},
+        podCondition: @pod_condition.map(&:schema),
+        containerStatuses: @container_statuses.map(&:schema),
+        ephemeralContainerStatuses: @ephemeral_container_statuses.map(&:schema),
         hostIP: @host_ip,
-        initContainerStatuses: @init_container_statuses.map{|r| r.schema},
+        initContainerStatuses: @init_container_statuses.map(&:schema),
         message: @message,
         nominatedNodeName: @nominated_node_name,
         phase: @phase,
         podIP: @pod_ip,
-        podIPs: @pod_ips.map{|r| r.schema},
+        podIPs: @pod_ips.map(&:schema),
         qosClass: @qos_class,
         reason: @reason,
-        startTime: @start_time 
+        startTime: @start_time
       }
     end
   end

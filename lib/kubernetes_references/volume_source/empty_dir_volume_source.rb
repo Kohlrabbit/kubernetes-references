@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#emptydirvolumesource-v1-core
   class EmptyDirVolumeSource < KubernetesReferences::API
     # @dynamic medium, medium=
     attr_accessor :medium
@@ -6,6 +9,7 @@ module KubernetesReferences
     attr_accessor :size_limit
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

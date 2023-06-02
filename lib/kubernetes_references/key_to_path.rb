@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#keytopath-v1-core
   class KeyToPath < KubernetesReferences::API
     # @dynamic key, key=
     attr_accessor :key
@@ -8,6 +11,7 @@ module KubernetesReferences
     attr_accessor :path
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

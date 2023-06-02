@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#volumemount-v1-core
   class VolumeMount < KubernetesReferences::API
     # @dynamic mount_path, mount_path=
     attr_accessor :mount_path
@@ -14,6 +17,7 @@ module KubernetesReferences
     attr_accessor :sub_path_expr
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

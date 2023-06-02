@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#azurediskvolumesource-v1-core
   class AzureDiskVolumeSource < KubernetesReferences::API
     # @dynamic caching_mode, caching_mode=
     attr_accessor :caching_mode
@@ -14,6 +17,7 @@ module KubernetesReferences
     attr_accessor :read_only
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

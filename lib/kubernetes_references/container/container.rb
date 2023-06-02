@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#container-v1-core
   class Container < KubernetesReferences::API
     # @dynamic env, env=
     attr_accessor :env
@@ -46,6 +49,7 @@ module KubernetesReferences
     attr_accessor :command
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
@@ -60,7 +64,7 @@ module KubernetesReferences
         lifecycle: @lifecycle,
         livenessProbe: @liveness_probe,
         name: @name,
-        ports: @ports.map{|r| r.schema},
+        ports: @ports.map(&:schema),
         readinessProbe: @readiness_probe,
         resources: @resources,
         securityContext: @security_context,
@@ -73,7 +77,7 @@ module KubernetesReferences
         volumeDevices: @volume_devices,
         volumeMounts: @volume_mounts,
         workingDir: @working_dir
-      }.select{|k,v| v}
+      }.select { |_k, v| v }
     end
   end
 end

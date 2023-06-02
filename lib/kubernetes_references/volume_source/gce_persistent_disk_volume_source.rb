@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#gcepersistentdiskvolumesource-v1-core
   class GCEPersistentDiskVolumeSource < KubernetesReferences::API
     # @dynamic fs_type, fs_type=
     attr_accessor :fs_type
@@ -10,6 +13,7 @@ module KubernetesReferences
     attr_accessor :read_only
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

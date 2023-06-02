@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podaffinityterm-v1-core
   class PodAffinityTerm < KubernetesReferences::API
     # @dynamic label_selector, label_selector=
     attr_accessor :label_selector
@@ -10,6 +13,7 @@ module KubernetesReferences
     attr_accessor :topology_key
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

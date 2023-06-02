@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectreference-v1-core
   class ObjectReference < KubernetesReferences::API
     # @dynamic api_version, api_version=
     attr_accessor :api_version
@@ -16,6 +19,7 @@ module KubernetesReferences
     attr_accessor :uid
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

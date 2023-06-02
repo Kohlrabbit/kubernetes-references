@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#managedfieldsentry-v1-meta
   class ManagedFieldsEntry < KubernetesReferences::API
     # @dynamic api_version, api_version=
     attr_accessor :api_version
@@ -16,6 +19,7 @@ module KubernetesReferences
     attr_accessor :time
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

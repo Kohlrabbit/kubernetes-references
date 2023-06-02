@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#volume-v1-core
   class Volume < KubernetesReferences::API
     # @dynamic aws_elastic_block_store, aws_elastic_block_store=
     attr_accessor :aws_elastic_block_store
@@ -62,6 +65,7 @@ module KubernetesReferences
     attr_accessor :vsphere_volume
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

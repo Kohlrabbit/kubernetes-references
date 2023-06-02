@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#toleration-v1-core
   class Toleration < KubernetesReferences::API
     # @dynamic effect, effect=
     attr_accessor :effect
@@ -12,6 +15,7 @@ module KubernetesReferences
     attr_accessor :value
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

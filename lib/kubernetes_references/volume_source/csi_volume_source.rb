@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#csivolumesource-v1-core
   class CSIVolumeSource < KubernetesReferences::API
     # @dynamic driver, driver=
     attr_accessor :driver
@@ -12,6 +15,7 @@ module KubernetesReferences
     attr_accessor :volume_attributes
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

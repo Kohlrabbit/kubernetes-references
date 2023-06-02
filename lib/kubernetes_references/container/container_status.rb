@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#containerstatus-v1-core
   class ContainerStatus < KubernetesReferences::API
     # @dynamic container_id, container_id=
     attr_accessor :container_id
@@ -20,6 +23,7 @@ module KubernetesReferences
     attr_accessor :state
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

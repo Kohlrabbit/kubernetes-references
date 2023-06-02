@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#persistentvolumeclaimspec-v1-core
   class PersistentVolumeClaimSpec < KubernetesReferences::API
     # @dynamic access_modes, access_modes=
     attr_accessor :access_modes
@@ -18,6 +21,7 @@ module KubernetesReferences
     attr_accessor :volume_name
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#quobytevolumesource-v1-core
   class QuobyteVolumeSource < KubernetesReferences::API
     # @dynamic group, group=
     attr_accessor :group
@@ -14,6 +17,7 @@ module KubernetesReferences
     attr_accessor :volume
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module KubernetesReferences
+  # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#affinity-v1-core
   class Affinity < KubernetesReferences::API
     # @dynamic node_affinity, node_affinity=
     attr_accessor :node_affinity
@@ -8,6 +11,7 @@ module KubernetesReferences
     attr_accessor :pod_anti_affinity
 
     def initialize(obj)
+      super()
       _set!(obj)
     end
 
