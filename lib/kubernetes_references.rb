@@ -142,7 +142,6 @@ require "kubernetes_references/pod/pod_condition"
 require "kubernetes_references/pod/pod_ip"
 
 module KubernetesReferences
-  VERSION = 0.2
   KUBE_API_VERSION = "v1.23"
   FIELDS = YAML.load(File.read("#{__dir__}/kubernetes_references/fields.yaml"))
 

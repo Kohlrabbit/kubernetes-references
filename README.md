@@ -67,6 +67,22 @@ container = KubeContainer.new(
 
 Please check the test files for more examples of how to use this gem.
 
+## Compatibility with Kubernetes API
+
+Since Ruby uses snake_case attributes instead of the camelCase used by Go (and therefore by Kubernetes), each object definition (let's call them templates) has a `#schema` method that returns a (native) Ruby hash with the right keys.
+
+
+**Example**
+
+```
+irb(main):001:0> container = KubeContainer.new(image_pull_policy: "Always")
+=> #<KubernetesReferences::Container:0x0000000100f4ce18 @image_pull_policy="Always">
+irb(main):002:0> container.schema
+=> {:imagePullPolicy=>"Always"}
+```
+
+when calling the "`#schema`" method, all sub-models on which the called object depends are also rendered with the correct keys. You can basically use the `to_json` method on `schema` to generate ready-to-use Kubernetes `json` manifests.
+
 ## Types
 
 All objects have type definitions as rbs files, in the "sig" folder. To check types, the project uses Steep.
