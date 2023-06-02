@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        configMap: @config_map.schema,
+        downwardApi: @downward_api.schema,
+        secret: @secret.schema,
+        serviceAccountToken: @service_account_token.schema
+      }
+    end
   end
 end

@@ -6,5 +6,11 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        conditionType: @condition_type
+      }
+    end
   end
 end

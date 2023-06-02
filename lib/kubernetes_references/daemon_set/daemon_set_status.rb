@@ -24,5 +24,20 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        colisionCount: @collision_count,
+        conditions: @conditions.map{|r| r.schema},
+        currentNumberScheduled: @current_number_scheduled,
+        desiredNumberScheduled: @desired_number_scheduled,
+        numberAvailable: @number_available,
+        numberMisscheduled: @number_misscheduled,
+        numberReady: @number_ready,
+        numberUnavailable: @number_unavailable,
+        observedGeneration: @observed_generation,
+        updatedNumberScheduled: @updated_number_scheduled
+      }
+    end
   end
 end

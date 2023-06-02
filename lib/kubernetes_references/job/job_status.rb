@@ -22,5 +22,19 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        active: @active,
+        completedIndexes: @completed_indexes,
+        completionTime: @completion_time,
+        conditions: @conditions.map{|r| r.schema},
+        failed: @failed,
+        ready: @ready,
+        startTime: @start_time,
+        succeeded: @succeeded,
+        uncountedTerminatedPods: @uncounted_terminated_pods.schema
+      }
+    end
   end
 end

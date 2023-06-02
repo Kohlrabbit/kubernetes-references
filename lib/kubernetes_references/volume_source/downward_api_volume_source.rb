@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        defaultMode: @default_mode,
+        items: @items.map{|r| r.schema}
+      }
+    end
   end
 end

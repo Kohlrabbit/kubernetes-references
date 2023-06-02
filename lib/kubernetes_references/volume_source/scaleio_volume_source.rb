@@ -24,5 +24,20 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fsType: @fs_type,
+        gateway: @gateway,
+        protectionDomain: @protection_domain,
+        readOnly: @read_only,
+        secretRef: @secret_ref.schema,
+        sslEnabled: @ssl_enabled,
+        storageMode: @storage_mode,
+        storagePool: @storage_pool,
+        system: @system,
+        volumeName: @volume_name
+      }
+    end
   end
 end

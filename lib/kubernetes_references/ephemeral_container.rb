@@ -50,5 +50,33 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        args: @args,
+        command: @command,
+        env: @env.map{|r| r.schema},
+        envFrom: @env_from.map{|r| r.schema},
+        image: @image,
+        imagePullPolicy: @image_pull_policy,
+        lifecycle: @lifecycle,
+        livenessProbe: @liveness_probe.schema,
+        name: @name,
+        ports: @ports.map{|r| r.schema},
+        readinessProbe: @readiness_probe.schema,
+        resources: @resources.schema,
+        securityContext: @security_context.schema,
+        startupProbe: @startup_probe.schema,
+        stdin: @stdin,
+        stdinOnce: @stdin_once,
+        targetContainerName: @target_container_name,
+        terminationMessagePath: @termination_message_path,
+        terminationMessagePolicy: @termination_message_policy,
+        tty: @tty,
+        volumeDevices: @volume_devices.map{|r| r.schema},
+        volumeMounts: @volume_mounts.map{|r| r.schema},
+        workingDir: @working_dir
+      }
+    end
   end
 end

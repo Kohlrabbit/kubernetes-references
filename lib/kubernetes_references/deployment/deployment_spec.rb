@@ -20,5 +20,18 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        minReadySeconds: @min_ready_seconds,
+        paused: @paused,
+        progressDeadlineSeconds: @progress_deadline_seconds,
+        replicas: @replicas,
+        revisionHistoryLimit: @revision_history_limit,
+        selector: @selector.schema,
+        strategy: @strategy.schema,
+        template: @template.schema
+      }
+    end
   end
 end

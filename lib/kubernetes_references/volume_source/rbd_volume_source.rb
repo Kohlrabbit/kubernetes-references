@@ -20,5 +20,18 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fsType: @fs_type,
+        image: @image,
+        keyring: @keyring,
+        monitors: @monitors,
+        pool: @pool,
+        readOnly: @read_only,
+        secretRef: @secret_ref.schema,
+        user: @user
+      }
+    end
   end
 end

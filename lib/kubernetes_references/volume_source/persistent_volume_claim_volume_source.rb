@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        claimName: @claim_name,
+        readOnly: @read_only
+      }
+    end
   end
 end

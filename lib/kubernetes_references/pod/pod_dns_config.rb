@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        nameservers: @nameservers,
+        options: @options.map{|r| r.schema},
+        searches: @searches
+      }
+    end
   end
 end

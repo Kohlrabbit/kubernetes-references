@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        podAffinityTerm: @pod_affinity_term.schema,
+        weight: @weight
+      }
+    end
   end
 end

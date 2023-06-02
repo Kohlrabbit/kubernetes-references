@@ -1,7 +1,9 @@
-class KubernetesReferences::EnvVar < KubernetesReferences::API
-  attr_accessor name: String
-  attr_accessor value: String
-  attr_accessor value_from: ::KubernetesReferences::EnvVarSource
+module KubernetesReferences
+  class EnvVar < KubernetesReferences::API
+    attr_accessor name: String
+    attr_accessor value: String
+    attr_accessor value_from: EnvVarSource
 
-  def initialize: (untyped obj) -> void
+    def initialize: (untyped obj) -> void
+  end
 end

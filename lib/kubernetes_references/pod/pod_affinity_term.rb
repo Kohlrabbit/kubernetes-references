@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        labelSelector: @label_selector.schema,
+        namespaceSelector: @namespace_selector.schema,
+        namespaces: @namespaces,
+        topologyKey: @topology_key
+      }
+    end
   end
 end

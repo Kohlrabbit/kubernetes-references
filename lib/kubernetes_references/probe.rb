@@ -24,5 +24,20 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        exec: @exec.schema,
+        failureThreshold: @failure_threshold,
+        grpc: @grpc.schema,
+        httpGet: @http_get.schema,
+        initialDelaySeconds: @initial_delay_seconds,
+        periodSeconds: @period_seconds,
+        successThreshold: @success_threshold,
+        tcpSocket: @tcp_socket.schema,
+        terminationGracePeriodSeconds: @termination_grace_period_seconds,
+        timeoutSeconds: @timeout_seconds
+      }
+    end
   end
 end

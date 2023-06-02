@@ -22,5 +22,19 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        containerID: @container_id,
+        image: @image,
+        imageID: @image_id,
+        lastState: @last_state.schema,
+        name: @name,
+        ready: @ready,
+        restartCount: @restart_count,
+        started: @started,
+        state: @state.schema
+      }
+    end
   end
 end

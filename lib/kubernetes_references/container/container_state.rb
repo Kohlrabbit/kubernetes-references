@@ -8,5 +8,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        running: @running.schema,
+        terminated: @terminated.schema,
+        waiting: @waiting.schema
+      }
+    end
   end
 end

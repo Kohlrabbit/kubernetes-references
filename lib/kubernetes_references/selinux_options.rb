@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        level: @level,
+        role: @role,
+        type: @type,
+        user: @user
+      }
+    end
   end
 end

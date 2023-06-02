@@ -16,5 +16,16 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        apiVersion: @api_version,
+        blockOwnerDeletion: @block_owner_deletion,
+        controller: @controller,
+        kind: @kind,
+        name: @name,
+        uid: @uid
+      }
+    end
   end
 end

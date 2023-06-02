@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fieldRef: @field_ref.schema,
+        mode: @mode,
+        path: @path,
+        resourceFieldRef: @resource_field_ref.schema
+      }
+    end
   end
 end

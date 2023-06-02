@@ -10,5 +10,15 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        host: @host,
+        httpHeaders: @http_headers.each{|r| r.schema},
+        path: @path,
+        port: @port,
+        scheme: @scheme
+      }
+    end
   end
 end

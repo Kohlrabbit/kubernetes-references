@@ -18,5 +18,17 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        apiVersion: @api_version,
+        fieldPath: @field_path,
+        kind: @kind,
+        name: @name,
+        namespace: @namespace,
+        resourceVersion: @resource_version,
+        uid: @uid
+      }
+    end
   end
 end

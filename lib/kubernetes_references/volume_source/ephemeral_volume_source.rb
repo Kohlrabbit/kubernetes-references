@@ -6,5 +6,11 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        volumeClaimTemplate: @volume_claim_template.schema
+      }
+    end
   end
 end

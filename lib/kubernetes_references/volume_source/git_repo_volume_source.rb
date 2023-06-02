@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        directory: @directory,
+        repository: @repository,
+        revision: @revision
+      }
+    end
   end
 end

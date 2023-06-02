@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        containerName: @container_name,
+        divisor: @divisor.schema,
+        resource: @resource
+      }
+    end
   end
 end

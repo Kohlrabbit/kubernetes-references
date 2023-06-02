@@ -14,5 +14,15 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fsType: @fs_type,
+        lun: @lun,
+        readOnly: @read_only,
+        targetWWNs: @target_wwns,
+        wwids: @wwids
+      }
+    end
   end
 end

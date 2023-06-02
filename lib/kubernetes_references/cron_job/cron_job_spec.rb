@@ -18,5 +18,17 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        concurrencyPolicy: @concurrency_policy,
+        failedJobsHistoryLimit: @failed_jobs_history_limit,
+        jobTemplate: @job_template.schema,
+        schedule: @schedule,
+        startingDeadlineSeconds: @starting_deadline_seconds,
+        successfulJobsHistoryLimit: @successful_jobs_history_limit,
+        suspend: @suspend
+      }
+    end
   end
 end

@@ -1,8 +1,16 @@
+require "yaml"
+require "json"
+require 'json/add/symbol'
 require "kubernetes_references/errors"
 
 module KubernetesReferences
   class API
-    def to_json
+    def to_hash
+      schema
+    end
+
+    def schema
+      _schema.select{|k, v| v}
     end
 
     def _set!(obj)

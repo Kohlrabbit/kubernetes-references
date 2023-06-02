@@ -20,5 +20,18 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        accessModes: @access_modes,
+        dataSource: @data_source.schema,
+        dataSourceRef: @data_source_ref.schema,
+        resources: @resources.schema,
+        selector: @selector.schema,
+        storageClassName: @storage_class_name,
+        volumeMode: @volume_mode,
+        volumeName: @volume_name
+      }
+    end
   end
 end

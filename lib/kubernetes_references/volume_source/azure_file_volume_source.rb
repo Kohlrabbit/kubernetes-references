@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        readOnly: @read_only,
+        secretName: @secret_name,
+        shareName: @share_name
+      }
+    end
   end
 end

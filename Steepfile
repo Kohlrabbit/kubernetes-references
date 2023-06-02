@@ -29,5 +29,6 @@
 target :kuberbetes do
     signature "sig"
     signature "sig/**/*.rbs"
+    library "yaml"
     check "lib/**/*.rb"
 end

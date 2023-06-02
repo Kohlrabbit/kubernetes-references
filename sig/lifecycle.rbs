@@ -1,6 +1,8 @@
-class KubernetesReferences::Lifecycle < KubernetesReferences::API
-  attr_accessor post_start: ::KubernetesReferences::LifecycleHandler
-  attr_accessor pre_stop: ::KubernetesReferences::LifecycleHandler
+module KubernetesReferences
+  class Lifecycle < KubernetesReferences::API
+    attr_accessor post_start: LifecycleHandler
+    attr_accessor pre_stop: LifecycleHandler
 
-  def initialize: (untyped obj) -> void
+    def initialize: (untyped obj) -> void
+  end
 end

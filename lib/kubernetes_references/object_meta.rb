@@ -36,5 +36,26 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        annotations: @annotations,
+        clusterName: @cluster_name,
+        creationTimestamp: @creation_timestamp,
+        deletionGracePeriodSeconds: @deletion_grace_period_seconds,
+        deletionTimestamp: @deletion_timestamp,
+        finalizers: @finalizers,
+        generateName: @generate_name,
+        generation: @generation,
+        labels: @labels,
+        managedFields: @managed_fields.map{|r| r.schema},
+        name: @name,
+        namespace: @namespace,
+        ownerReferences: @owner_references.map{|r| r.schema},
+        resourceVersion: @resource_version,
+        selfLink: @self_link,
+        uid: @uid
+      }
+    end
   end
 end

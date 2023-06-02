@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        nodeAffinity: @node_affinity.schema,
+        podAffinity: @pod_affinity.schema,
+        podAntiAffinity: @pod_anti_affinity.schema
+      }
+    end
   end
 end

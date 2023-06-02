@@ -18,5 +18,17 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        containerID: @container_id,
+        exitCode: @exit_code,
+        finishedAt: @finished_at,
+        message: @message,
+        reason: @reason,
+        signal: @signal,
+        startedAt: @started_at
+      }
+    end
   end
 end

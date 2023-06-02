@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        preference: @preference.schema,
+        weight: @weight
+      }
+    end
   end
 end

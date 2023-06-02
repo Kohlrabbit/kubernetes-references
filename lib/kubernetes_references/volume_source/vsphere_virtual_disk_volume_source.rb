@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fsType: @fs_type,
+        storagePolicyID: @storage_policy_id,
+        storagePolicyName: @storage_policy_name,
+        volumePath: @volume_path
+      }
+    end
   end
 end

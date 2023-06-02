@@ -16,5 +16,16 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        mountPath: @mount_path,
+        mountPropagation: @mount_propagation,
+        name: @name,
+        readOnly: @read_only,
+        subPath: @sub_path,
+        subPathExpr: @sub_path_expr
+      }
+    end
   end
 end

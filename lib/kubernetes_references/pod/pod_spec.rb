@@ -76,5 +76,46 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        activeDeadlineSeconds: @active_deadline_seconds,
+        affinity: @affinity.schema,
+        automountServiceAccountToken: @automount_service_account_token,
+        containers: @containers.map{|r| r.schema},
+        dnsConfig: @dns_config.schema,
+        dnsPolicy: @dns_policy,
+        enableServiceLinks: @enable_service_links,
+        ephemeralContainers: @ephemeral_containers.map{|r| r.schema},
+        hostAliases: @host_aliases.map{|r| r.schema},
+        hostIPC: @host_ipc,
+        hostNetwork: @host_network,
+        hostPID: @host_pid,
+        hostname: @hostname,
+        imagePullSecrets: @image_pull_secrets,
+        initContainers: @init_containers.map{|r| r.schema},
+        nodeName: @node_name,
+        nodeSelector: @node_selector,
+        os: @os.schema,
+        overhead: @overhead,
+        preemptionPolicy: @preemption_policy,
+        priority: @priority,
+        priorityClassName: @priority_class_name,
+        readinessGates: @readiness_gates.map{|r| r.schema},
+        restartPolicy: @restart_policy,
+        runtimeClassName: @runtime_class_name,
+        schedulerName: @scheduler_name,
+        securityContext: @security_context.schema,
+        serviceAccount: @service_account,
+        serviceAccountName: @service_account_name,
+        setHostnameAsFQDN: @set_hostname_as_fqdn,
+        shareProcessNamespace: @share_process_namespace,
+        subdmain: @subdomain,
+        terminationGracePeriodSeconds: @termination_grace_period_seconds,
+        tolerations: @tolerations.map{|r| r.schema},
+        topologySpreadConstraints: @topology_spread_constraints.map{|r| r.schema},
+        volumes: @volumes.map{|r| r.schema}
+      }
+    end
   end
 end

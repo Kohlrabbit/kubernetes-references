@@ -11,5 +11,9 @@ module KubernetesReferences
       # todo: implement requirements from Kubernetes doc
       # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#quantity-resource-core
     end
+
+    def _schema
+      @value
+    end
   end
 end

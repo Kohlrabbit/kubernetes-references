@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        apiGroup: @api_group,
+        kind: @kind,
+        name: @name
+      }
+    end
   end
 end

@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        gmsaCredentialSpec: @gmsa_credential_spec,
+        gmsaCredentialSpecName: @gmsa_credential_spec_name,
+        hostProcess: @host_process,
+        runAsUserName: @run_as_user_name
+      }
+    end
   end
 end

@@ -30,5 +30,23 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        podCondition: @pod_condition.map{|r| r.schema},
+        containerStatuses: @container_statuses.map{|r| r.schema},
+        ephemeralContainerStatuses: @ephemeral_container_statuses.map{|r| r.schema},
+        hostIP: @host_ip,
+        initContainerStatuses: @init_container_statuses.map{|r| r.schema},
+        message: @message,
+        nominatedNodeName: @nominated_node_name,
+        phase: @phase,
+        podIP: @pod_ip,
+        podIPs: @pod_ips.map{|r| r.schema},
+        qosClass: @qos_class,
+        reason: @reason,
+        startTime: @start_time 
+      }
+    end
   end
 end

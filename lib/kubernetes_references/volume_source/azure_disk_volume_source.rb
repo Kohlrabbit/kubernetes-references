@@ -16,5 +16,16 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        cachingMode: @caching_mode,
+        diskName: @disk_name,
+        diskURI: @disk_uri,
+        fsType: @fs_type,
+        kind: @kind,
+        readOnly: @read_only
+      }
+    end
   end
 end

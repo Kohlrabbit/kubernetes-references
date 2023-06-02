@@ -1,9 +1,5 @@
 module KubernetesReferences
   class Container < KubernetesReferences::API
-    # @dynamic args, args=
-    attr_accessor :args
-    # @dynamic command, command=
-    attr_accessor :command
     # @dynamic env, env=
     attr_accessor :env
     # @dynamic env_from, env_from=
@@ -44,9 +40,40 @@ module KubernetesReferences
     attr_accessor :volume_mounts
     # @dynamic working_dir, working_dir=
     attr_accessor :working_dir
+    # @dynamic args, args=
+    attr_accessor :args
+    # @dynamic command, command=
+    attr_accessor :command
 
     def initialize(obj)
       _set!(obj)
+    end
+
+    def _schema
+      {
+        args: @args,
+        command: @command,
+        env: @env,
+        envFrom: @env_from,
+        image: @image,
+        imagePullPolicy: @image_pull_policy,
+        lifecycle: @lifecycle,
+        livenessProbe: @liveness_probe,
+        name: @name,
+        ports: @ports.map{|r| r.schema},
+        readinessProbe: @readiness_probe,
+        resources: @resources,
+        securityContext: @security_context,
+        startupProbe: @startup_probe,
+        stdin: @stdin,
+        stdinOnce: @stdin_once,
+        terminationMessagePath: @termination_message_path,
+        terminationMessagePolicy: @termination_message_policy,
+        tty: @tty,
+        volumeDevices: @volume_devices,
+        volumeMounts: @volume_mounts,
+        workingDir: @working_dir
+      }.select{|k,v| v}
     end
   end
 end

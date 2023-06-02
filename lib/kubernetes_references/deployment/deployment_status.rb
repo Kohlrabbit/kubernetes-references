@@ -20,5 +20,18 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        availableReplicas: @available_replicas,
+        collisionCount: @collision_count,
+        conditions: @conditions.map{|r| r.schema},
+        observedGeneration: @observed_generation,
+        readyReplicas: @ready_replicas,
+        replicas: @replicas,
+        unavailableReplicas: @unavailable_replicas,
+        updatedReplicas: @updated_replicas
+      }
+    end
   end
 end

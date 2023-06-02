@@ -24,5 +24,20 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        activeDeadlineSeconds: @active_deadline_seconds,
+        backoffLimit: @backoff_limit,
+        completionMode: @completion_mode,
+        completions: @completions,
+        manualSelector: @manual_selector,
+        parallelism: @parallelism,
+        selector: @selector.schema,
+        suspend: @suspend,
+        template: @template.schema,
+        ttlSecondsAfterFinished: @ttl_seconds_after_finished
+      }
+    end
   end
 end

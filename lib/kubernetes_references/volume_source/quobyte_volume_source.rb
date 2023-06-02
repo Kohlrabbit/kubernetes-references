@@ -16,5 +16,16 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        group: @group,
+        readOnly: @read_only,
+        registry: @registry,
+        tenant: @tenant,
+        user: @user,
+        volume: @volume
+      }
+    end
   end
 end

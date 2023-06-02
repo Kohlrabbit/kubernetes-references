@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        preferredDuringSchedulingIgnoredDuringExecution: @preferred_during_scheduling_ignored_during_execution.map{|r| r.schema},
+        requiredDuringSchedulingIgnoredDuringExecution: @required_during_scheduling_ignored_during_execution.map{|r| r.schema}
+      }
+    end
   end
 end

@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        matchExpressions: @match_expressions.map{|r| r.schema},
+        matchLabels: @match_labels
+      }
+    end
   end
 end

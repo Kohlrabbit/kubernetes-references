@@ -14,5 +14,15 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        effect: @effect,
+        key: @key,
+        operator: @operator,
+        tolerationSeconds: @toleration_seconds,
+        value: @value
+      }
+    end
   end
 end

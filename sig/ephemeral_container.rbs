@@ -24,6 +24,8 @@ module KubernetesReferences
     attr_accessor volume_mounts: Array[VolumeMount]
     attr_accessor working_dir: String
 
+    ATTRS: Array[Symbol]
+
     def initialize: (untyped obj) -> void
   end
 end

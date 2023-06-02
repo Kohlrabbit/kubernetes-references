@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        exec: @exec.schema,
+        httpGet: @http_get.schema,
+        tcpSocket: @tcp_socket
+      }
+    end
   end
 end

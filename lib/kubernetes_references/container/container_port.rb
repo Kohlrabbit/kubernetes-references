@@ -14,5 +14,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        containerPort: @container_port,
+        hostIp: @host_ip,
+        name: @name,
+        protocol: @protocol
+      }
+    end
   end
 end

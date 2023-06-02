@@ -26,5 +26,21 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        chapAuthDiscovery: @chap_auth_discovery,
+        chapAuthSession: @chap_auth_session,
+        fsType: @fs_type,
+        initiatorName: @initiator_name,
+        iqn: @iqn,
+        iscsiInterface: @iscsi_interface,
+        lun: @lun,
+        portals: @portals,
+        readOnly: @read_only,
+        secretRef: @secret_ref.schema,
+        targetPortal: @target_portal
+      }
+    end
   end
 end

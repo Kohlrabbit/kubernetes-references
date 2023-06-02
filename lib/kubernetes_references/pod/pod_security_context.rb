@@ -24,5 +24,19 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        fsGroup: @fs_group,
+        fsGroupChangePolicy: @fs_group_change_policy,
+        runAsGroup: @run_as_group,
+        runAsNonRoot: @run_as_non_root,
+        seLinuxOptions: @selinux_options.schema,
+        seccompProfile: @seccomp_profile.schema,
+        supplementalGroups: @supplemental_groups,
+        sysctls: @sysctls.map{|r| r.schema},
+        windowsOptions: @windows_options.schema
+      }
+    end
   end
 end

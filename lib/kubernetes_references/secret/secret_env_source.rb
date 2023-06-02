@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        name: @name,
+        optional: @optional
+      }
+    end
   end
 end

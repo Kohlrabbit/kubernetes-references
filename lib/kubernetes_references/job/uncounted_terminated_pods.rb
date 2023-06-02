@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        failed: @failed,
+        succeeded: @succeeded
+      }
+    end
   end
 end

@@ -1,0 +1,10 @@
+module KubernetesReferences
+
+  FIELDS: Hash[String, String]
+  
+  class API
+    def translate: (Symbol placeholder) -> String
+    def schema: -> Hash[Symbol, untyped]
+    def _schema: -> untyped
+  end
+end

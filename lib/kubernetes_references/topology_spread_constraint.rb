@@ -12,5 +12,14 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        labelSelector: @label_selector.schema,
+        maxSkew: @max_skew,
+        topologyKey: @topology_key,
+        whenUnsatisfiable: @when_unsatisfiable
+      }
+    end
   end
 end

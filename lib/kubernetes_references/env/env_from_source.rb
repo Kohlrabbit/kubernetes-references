@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        configMapRef: @config_map_ref.schema,
+        prefix: @prefix,
+        secretRef: @secret_ref.schema
+      }
+    end
   end
 end

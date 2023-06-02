@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        name: @name,
+        value: @value,
+        valueFrom: @value_from.schema
+      }
+    end
   end
 end

@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        localhostProfile: @localhost_profile,
+        type: @type
+      }
+    end
   end
 end

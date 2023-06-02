@@ -64,5 +64,40 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        awsElasticBlockStore: @aws_elastic_block_store.schema,
+        azureDisk: @azure_disk.schema,
+        azureFile: @azure_file.schema,
+        cephfs: @cephfs.schema,
+        cinder: @cinder.schema,
+        configMap: @config_map.schema,
+        csi: @csi.schema,
+        downwardApi: @downward_api.schema,
+        emptyDir: @empty_dir.schema,
+        ephemeral: @ephemeral.schema,
+        fc: @fc.schema,
+        flexVolume: @flex_volume.schema,
+        flocker: @flocker.schema,
+        gcePersistentDisk: @gce_persistent_disk.schema,
+        gitRepo: @git_repo.schema,
+        glusterfs: @glusterfs.schema,
+        hostPath: @host_path.schema,
+        iscsi: @iscsi.schema,
+        name: @name,
+        nfs: @nfs.schema,
+        persistentVolumeClaim: @persistent_volume_claim.schema,
+        photonPersistentDisk: @photon_persistent_disk.schema,
+        portworxVolume: @portworx_volume.schema,
+        projected: @projected.schema,
+        quobyte: @quobyte.schema,
+        rbd: @rbd.schema,
+        scaleio: @scaleio.schema,
+        secret: @secret.schema,
+        storageos: @storageos.schema,
+        vsphereVolume: @vsphere_volume.schema
+      }
+    end
   end
 end

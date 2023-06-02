@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        active: @active,
+        lastScheduleTime: @last_schedule_time,
+        lastSuccessfulTime: @last_successful_time
+      }
+    end
   end
 end

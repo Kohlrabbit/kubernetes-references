@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        postStart: @post_start.schema,
+        preStop: @pre_stop.schema
+      }
+    end
   end
 end

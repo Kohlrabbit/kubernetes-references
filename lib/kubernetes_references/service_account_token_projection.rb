@@ -10,5 +10,13 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        audience: @audience,
+        expirationSeconds: @expiration_seconds,
+        path: @path
+      }
+    end
   end
 end

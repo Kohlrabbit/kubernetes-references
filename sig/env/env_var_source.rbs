@@ -1,8 +1,10 @@
-class KubernetesReferences::EnvVarSource < KubernetesReferences::API
-  attr_accessor config_map_key_ref: ::KubernetesReferences::ConfigMapKeySelector
-  attr_accessor field_ref: ::KubernetesReferences::ObjectFieldSelector
-  attr_accessor resource_field_ref: ::KubernetesReferences::ResourceFieldSelector
-  attr_accessor secret_key_ref: ::KubernetesReferences::SecretKeySelector
+module KubernetesReferences
+  class EnvVarSource < KubernetesReferences::API
+    attr_accessor config_map_key_ref: ConfigMapKeySelector
+    attr_accessor field_ref: ObjectFieldSelector
+    attr_accessor resource_field_ref: ResourceFieldSelector
+    attr_accessor secret_key_ref: SecretKeySelector
 
-  def initialize: (untyped obj) -> void
+    def initialize: (untyped obj) -> void
+  end
 end

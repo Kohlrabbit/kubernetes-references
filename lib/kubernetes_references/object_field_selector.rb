@@ -8,5 +8,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        apiVersion: @api_version,
+        fieldPath: @field_path
+      }
+    end
   end
 end

@@ -26,5 +26,21 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        allowPrivilegeEscalation: @allow_privilege_escalation,
+        capabilities: @capabilities.schema,
+        privileged: @privileged,
+        procMount: @proc_mount,
+        readOnlyRootFilesystem: @read_only_root_filesystem,
+        runAsGroup: @run_as_group,
+        runAsNonRoot: @run_as_non_root,
+        runAsUser: @run_as_user,
+        seLinuxOptions: @selinux_options.schema,
+        seccompProfile: @seccomp_profile.schema,
+        windowsOptions: @windows_options.schema
+      }
+    end
   end
 end

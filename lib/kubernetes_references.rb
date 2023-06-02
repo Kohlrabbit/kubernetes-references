@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+class NilClass
+  def map
+    nil
+  end
+
+  def schema
+    nil
+  end
+end
+
 require "kubernetes_references/api"
 require "kubernetes_references/action/exec_action"
 require "kubernetes_references/action/grpc_action"
@@ -75,9 +85,9 @@ require "kubernetes_references/sysctl"
 require "kubernetes_references/toleration"
 require "kubernetes_references/topology_spread_constraint"
 require "kubernetes_references/typed_local_object_reference"
-require "kubernetes_references/volume_device"
-require "kubernetes_references/volume_mount"
-require "kubernetes_references/volume_projection"
+require "kubernetes_references/volume/volume_device"
+require "kubernetes_references/volume/volume_mount"
+require "kubernetes_references/volume/volume_projection"
 require "kubernetes_references/volume_source/aws_elastic_block_store_volume_source"
 require "kubernetes_references/volume_source/azure_disk_volume_source"
 require "kubernetes_references/volume_source/azure_file_volume_source"
@@ -107,7 +117,7 @@ require "kubernetes_references/volume_source/scaleio_volume_source"
 require "kubernetes_references/volume_source/secret_volume_source"
 require "kubernetes_references/volume_source/storageos_volume_source"
 require "kubernetes_references/volume_source/vsphere_virtual_disk_volume_source"
-require "kubernetes_references/volume"
+require "kubernetes_references/volume/volume"
 require "kubernetes_references/weighted_pod_affinity_term"
 require "kubernetes_references/windows_security_context_options"
 require "kubernetes_references/daemon_set/daemon_set_spec"
@@ -134,6 +144,7 @@ require "kubernetes_references/pod/pod_ip"
 module KubernetesReferences
   VERSION = 0.2
   KUBE_API_VERSION = "v1.23"
+  FIELDS = YAML.load(File.read("#{__dir__}/kubernetes_references/fields.yaml"))
 
   class Error < StandardError; end
   # Your code goes here...

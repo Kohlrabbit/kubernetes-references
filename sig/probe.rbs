@@ -1,14 +1,16 @@
-class KubernetesReferences::Probe < KubernetesReferences::API
-  attr_accessor exec: ::KubernetesReferences::ExecAction
-  attr_accessor failure_threshold: Integer
-  attr_accessor grpc: ::KubernetesReferences::GRPCAction
-  attr_accessor http_get: ::KubernetesReferences::HTTPGetAction
-  attr_accessor initial_delay_seconds: Integer
-  attr_accessor period_seconds: Integer
-  attr_accessor success_threshold: Integer
-  attr_accessor tcp_socket: ::KubernetesReferences::TCPSocketAction
-  attr_accessor termination_grace_period_seconds: Integer
-  attr_accessor timeout_seconds: Integer
+module KubernetesReferences
+  class Probe < KubernetesReferences::API
+    attr_accessor exec: ExecAction
+    attr_accessor failure_threshold: Integer
+    attr_accessor grpc: GRPCAction
+    attr_accessor http_get: HTTPGetAction
+    attr_accessor initial_delay_seconds: Integer
+    attr_accessor period_seconds: Integer
+    attr_accessor success_threshold: Integer
+    attr_accessor tcp_socket: TCPSocketAction
+    attr_accessor termination_grace_period_seconds: Integer
+    attr_accessor timeout_seconds: Integer
 
-  def initialize: (untyped obj) -> void
+    def initialize: (untyped obj) -> void
+  end
 end

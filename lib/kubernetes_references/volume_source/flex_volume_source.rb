@@ -14,5 +14,15 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        driver: @driver,
+        fsType: @fs_type,
+        options: @options,
+        readOnly: @read_only,
+        secretRef: @secret_ref.schema
+      }
+    end
   end
 end

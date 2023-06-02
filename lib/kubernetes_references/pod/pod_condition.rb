@@ -16,5 +16,16 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        lastProbeTime: @last_probe_time,
+        lastTransitionTime: @last_transition_time,
+        message: @message,
+        reason: @reason,
+        status: @status,
+        type: @type
+      }
+    end
   end
 end

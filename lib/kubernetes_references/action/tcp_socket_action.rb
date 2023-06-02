@@ -7,5 +7,12 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        host: @host,
+        port: @port
+      }
+    end
   end
 end

@@ -6,5 +6,11 @@ module KubernetesReferences
     def initialize(obj)
       _set!(obj)
     end
+
+    def _schema
+      {
+        nodeSelectorTerms: @node_selector_terms.map{|r| r.schema}
+      }
+    end
   end
 end
